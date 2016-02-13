@@ -52,7 +52,20 @@ class MakerController extends Controller
         return response()->json(['message'=>'Maker has been updated'],200);
     }
 
-    public function destroy($id){
-    	
+    public function destroy($maker_id){
+		$maker = Maker::find($maker_id);
+        
+        if(!$maker){
+            return response()->json(['message'=>'There is not any data associated with this maker ID','code'=>404],404);
+        }    	
+
+        $vehicles = $maker->vehicles;
+
+        if(sizeof($vehicles) > 0){
+        	return response()->json(['message'=>'This maker ID has vehicles so please delete vehicles first','code'=>409],409);
+        }
+
+        $maker->delete();
+        return response()->json(['message'=>'Maker is deleted successfully'],200);
     }
 }
