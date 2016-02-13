@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Vehicle;
 
 class VehicleController extends Controller
 {
@@ -15,6 +16,8 @@ class VehicleController extends Controller
 	* @return Response
     */
     public function index(){
-    	return 'IM here in index';
+    	$vehicles = Vehicle::all();
+
+    	return response() -> json( ['data' => $vehicles],200);
     }
 }

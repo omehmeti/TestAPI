@@ -23,7 +23,7 @@ class VehiclesSeed extends Seeder
                     'power' => $faker->randomNumber(),
                     'capacity'=> $faker->randomFloat(),
                     'speed' => $faker->randomFloat(),
-                    'maker_id' => $faker->randomNumber(5)
+                    'maker_id' => $faker->numberBetween(1,5)
                 ]);
         }
     }

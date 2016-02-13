@@ -5,7 +5,7 @@ class Maker extends Model
 {
 	protected $table = 'makers';
 
-	protected $primaryKey = 'serie';
+	protected $primaryKey = 'id';
 
 	protected $fillable = ['id','name','phone'];
 
