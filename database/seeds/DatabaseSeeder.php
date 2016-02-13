@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use App\Maker;
+use App\Vehicle;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserTableSeeder::class);
+    	DB::statement('SET FOREIGN_KEY_CHECKS = 0');//this disables foreign key for truncate
+    	Maker::truncate();
+    	Vehicle::truncate();
+    	Maker::unguard();
+    	Vehicle::unguard();
+         $this->call('MakerSeed');
+         $this->call('VehiclesSeed');
     }
 }
