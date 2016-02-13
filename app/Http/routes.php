@@ -31,6 +31,6 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 //Route::get('/{name?}','MyController@index');
-Route::resource('makers','MyController',['except' => ['create','edit'] ]); //Create and Edit are removed and will not be shown as routes
-Route::resource('vehicles','MyController',['only' => ['index'] ]); 
-Route::resource('makers.vehicles','MyController',['except' => ['edit','show'] ]); 
+Route::resource('makers','MakerController',['except' => ['create','edit'] ]); //Create and Edit are removed and will not be shown as routes
+Route::resource('vehicles','VehicleController',['only' => ['index'] ]); 
+Route::resource('makers.vehicles','MakerVehiclesController',['except' => ['edit','create'] ]); 
