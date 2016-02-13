@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Maker;
 use App\Vehicle;
 
+
 class MakerVehiclesController extends Controller
 {
     public function index($id){
@@ -21,7 +22,7 @@ class MakerVehiclesController extends Controller
     }
 
     public function store(){
-    	
+      
     }
 
     public function show($id,$vehicleID){
