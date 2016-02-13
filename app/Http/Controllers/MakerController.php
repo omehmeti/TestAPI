@@ -36,8 +36,20 @@ class MakerController extends Controller
     	
     }
 
-    public function update($id){
-    	
+    public function update(CreateMakerRequest $request,$maker_id){
+    	$maker = Maker::find($maker_id);
+        
+        if(!$maker){
+            return response()->json(['message'=>'There is not any data associated with this maker ID','code'=>404],404);
+        }
+
+        $name = $request->get('name');
+        $phone = $request->get('phone');
+
+        $maker->name = $name;
+        $maker->phone = $phone;
+        $maker->save();
+        return response()->json(['message'=>'Maker has been updated'],200);
     }
 
     public function destroy($id){

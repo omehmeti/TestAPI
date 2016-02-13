@@ -10,6 +10,7 @@ use App\Maker;
 use App\Vehicle;
 use App\Http\Requests\CreateVehicleRequest;
 
+
 class MakerVehiclesController extends Controller
 {
     public function index($id){
@@ -47,8 +48,33 @@ class MakerVehiclesController extends Controller
         }
     }
 
-    public function update($id){
+    public function update(CreateVehicleRequest $request, $maker_id,$vehicle_id){
     	
+        $maker = Maker::find($maker_id);
+        
+        if(!$maker){
+            return response()->json(['message'=>'There is not any data associated with this maker ID','code'=>404],404);
+        }
+
+        $vehicle =$maker->vehicles()->find($vehicle_id);
+        
+        if(!$vehicle){
+            return response()->json(['message'=>'There is not any data associated with this vehicle ID','code'=>404],404);
+        }        
+
+        $color = $request->get('color');
+        $power = $request->get('power');
+        $capacity = $request->get('capacity');
+        $speed = $request->get('speed');
+
+        $vehicle->color = $color;
+        $vehicle->power = $power;
+        $vehicle->capacity = $capacity;
+        $vehicle->speed = $speed;
+
+        $vehicle->save();
+        return response()->json(['message'=>'Vehicle has been updated'],200);
+
     }
 
     public function destroy($id){
