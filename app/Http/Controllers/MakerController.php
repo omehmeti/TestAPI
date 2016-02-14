@@ -12,7 +12,7 @@ use App\Http\Requests\CreateMakerRequest;
 class MakerController extends Controller
 {
 	public function __construct(){
-		$this->middleware('auth.basic',['except'=>['index','show']]);
+		$this->middleware('auth.basic.once',['except'=>['show']]);
 	}
 
     public function index(){
