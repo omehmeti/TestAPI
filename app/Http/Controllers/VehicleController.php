@@ -10,11 +10,17 @@ use App\Vehicle;
 
 class VehicleController extends Controller
 {
+    
+	public function __construct(){
+		$this->middleware('auth.basic',['except'=>['index','show']]);
+	}
+
     /**
 	* Display a listing of the resource
 	*
 	* @return Response
     */
+    
     public function index(){
     	$vehicles = Vehicle::all();
 

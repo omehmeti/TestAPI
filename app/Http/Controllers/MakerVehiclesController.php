@@ -13,6 +13,10 @@ use App\Http\Requests\CreateVehicleRequest;
 
 class MakerVehiclesController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth.basic',['except'=>['index','show']]);
+    }
+
     public function index($id){
     	$makers = Maker::find($id);
         if(!$makers){
@@ -77,7 +81,20 @@ class MakerVehiclesController extends Controller
 
     }
 
-    public function destroy($id){
-    	
+    public function destroy($maker_id,$vehicle_id){
+    	$maker = Maker::find($maker_id);
+        
+        if(!$maker){
+            return response()->json(['message'=>'There is not any data associated with this maker ID','code'=>404],404);
+        }       
+
+        $vehicles = $maker->vehicles->find($vehicle_id);
+
+        if(!$vehicles){
+            return response()->json(['message'=>'There is not vehicle associated with this vehicle ID','code'=>409],409);
+        }
+
+        $vehicles->delete();
+        return response()->json(['message'=>'Vehicle is deleted successfully'],200);
     }
 }
