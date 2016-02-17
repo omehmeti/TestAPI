@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache; //Added for cache support of requests
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -12,13 +13,18 @@ use App\Http\Requests\CreateMakerRequest;
 class MakerController extends Controller
 {
 	public function __construct(){
-		$this->middleware('auth.basic.once',['except'=>['show']]);
+		$this->middleware('auth.basic.once',['except'=>['show','index']]);
 	}
 
     public function index(){
-    	$makers = Maker::all();
+    	$makers = Cache::remember('makers',15/60,function(){
 
-    	return response() -> json( ['data' => $makers],200);
+            return Maker::simplePaginate(1);
+        });
+
+    	//return response() -> json( ['next'=> $makers->nextPageUrl(),'previous'=> $makers-> previousPageUrl(),'data' => $makers],200);
+        return response() -> json( ['data' => $makers],200);
+        
     }
 
     public function store( CreateMakerRequest $request ){
