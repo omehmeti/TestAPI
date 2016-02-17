@@ -3,10 +3,66 @@
 	{
 		"selected_items":
 		[
+			[
+				"veh",
+				"vehicle_id"
+			],
+			[
+				"id",
+				"id"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "app/Http/Controllers/MakerController.php",
+			"settings":
+			{
+				"buffer_size": 2073,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Exceptions/Handler.php",
+			"settings":
+			{
+				"buffer_size": 1573,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/MakerVehiclesController.php",
+			"settings":
+			{
+				"buffer_size": 3321,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Middleware/OnceAuth.php",
+			"settings":
+			{
+				"buffer_size": 1017,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Http/Kernel.php",
+			"settings":
+			{
+				"buffer_size": 1602,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/VehicleController.php",
+			"settings":
+			{
+				"buffer_size": 514,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -45,21 +101,57 @@
 	},
 	"expanded_folders":
 	[
-		"/C/xampp/htdocs/PikaCardAPI"
+		"/C/xampp/htdocs/PikaCardAPI",
+		"/C/xampp/htdocs/PikaCardAPI/app",
+		"/C/xampp/htdocs/PikaCardAPI/app/Exceptions",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http",
+		"/C/xampp/htdocs/PikaCardAPI/database",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Foundation/Http"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/PikaCardAPI/.env",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MyController.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Auth/Middleware/AuthenticateWithBasicAuth.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateVehicleRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Vehicle.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Maker.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/UsersSeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_14_080210_create_users.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/User.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateMakerRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/VehicleController.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/Request.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_13_120132_vehicles_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Kernel.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/routes.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/VehiclesSeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/MakerSeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_13_115831_makers_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MakerVehiclesController.php",
+		"/C/xampp/htdocs/PikaCardAPI/resources/views/hi.blade.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/MyModel.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_13_120051_makers_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/factories/ModelFactory.php",
 		"/C/xampp/htdocs/PikaCardAPI/public/index.html"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -67,6 +159,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"=users",
+			"FormRequest",
+			"serie",
+			"find",
+			"serie",
+			"');\n",
+			" \n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -84,18 +183,201 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/Http/Controllers/MakerController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2073,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								313,
+								313
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Exceptions/Handler.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1573,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1541,
+								1541
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 63.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Http/Controllers/MakerVehiclesController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								336,
+								336
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/Http/Middleware/OnceAuth.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1017,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								999,
+								1006
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/Http/Kernel.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								848,
+								858
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 48.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/Http/Controllers/VehicleController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 514,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								266,
+								266
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 23.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -128,7 +410,7 @@
 	"project": "PikaCardAPI.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -137,6 +419,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"authenticatewithbaci",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\AuthenticateWithBasicAuth.php"
+			],
+			[
+				"withba",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\AuthenticateWithBasicAuth.php"
+			],
+			[
+				"model",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php"
+			]
 		],
 		"width": 0.0
 	},
@@ -166,7 +460,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 352.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

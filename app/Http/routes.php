@@ -26,11 +26,15 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+/*Route::group(['middleware' => ['web']], function () {
     //
 });
+*/
 
-//Route::get('/{name?}','MyController@index');
-Route::resource('makers','MakerController',['except' => ['create','edit'] ]); //Create and Edit are removed and will not be shown as routes
-Route::resource('vehicles','VehicleController',['only' => ['index'] ]); 
-Route::resource('makers.vehicles','MakerVehiclesController',['except' => ['edit','create'] ]); 
+Route::group(array('prefix' => 'api/v1.0'), function () {
+	//Route::get('/{name?}','MyController@index');
+	Route::resource('makers','MakerController',['except' => ['create','edit'] ]); //Create and Edit are removed and will not be shown as routes
+	Route::resource('vehicles','VehicleController',['only' => ['index'] ]); 
+	Route::resource('makers.vehicles','MakerVehiclesController',['except' => ['edit','create'] ]); 
+	}
+);
