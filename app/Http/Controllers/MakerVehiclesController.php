@@ -34,8 +34,8 @@ class MakerVehiclesController extends Controller
         }
 
         $values = $request->all();
-        $maker->vehicles()->create($values);
-        return response()->json(['message'=>'New vehicle is created successfully'],201);
+        $vehicle = $maker->vehicles()->create($values);
+        return response()->json(['message'=>"New vehicle is created successfully with id: {$vehicle->id}"],201);
     }
 
     public function show($id,$vehicleID){
