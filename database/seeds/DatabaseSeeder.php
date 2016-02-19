@@ -19,11 +19,15 @@ class DatabaseSeeder extends Seeder
     	Maker::truncate();
     	Vehicle::truncate();
         User::truncate();
-    	Maker::unguard();
+        DB::table('oauth_clients')->truncate();
+    	
+        Maker::unguard();
     	Vehicle::unguard();
         User::unguard();
-         $this->call('MakerSeed');
-         $this->call('VehiclesSeed');
-         $this->call('UsersSeed');
+                
+        $this->call('MakerSeed');
+        $this->call('VehiclesSeed');
+        $this->call('UsersSeed');
+        $this->call('OAuthClientSeed');
     }
 }

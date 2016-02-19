@@ -49,7 +49,8 @@ class Handler extends ExceptionHandler
         if( $e instanceof NotFoundHttpException){
             return response()->json(['message'=>'Bad request.Please verify your request route.','code'=>400],400);
         }else{
-            return response()->json(['message'=>'Unexpected error. Try again later','code'=>500],500);
+            //return parent::render($request, $e);
+            return response()->json(['message'=>$e,'code'=>400],400);
         }
         
     }
