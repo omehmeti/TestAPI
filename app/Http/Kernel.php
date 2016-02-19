@@ -28,6 +28,7 @@ class Kernel extends HttpKernel
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \LucaDegasperi\OAuth2Server\Middleware\OAuthExceptionHandlerMiddleware::class, //added for oauth2
             //\App\Http\Middleware\VerifyCsrfToken::class,
         ],
 
@@ -48,6 +49,7 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'auth.basic.once' => 'App\Http\Middleware\OnceAuth',// This is added to introduce the new auth created during the training class
+        'auth.basic.once' => \App\Http\Middleware\OnceAuth::class,// This is added to introduce the new auth created during the training class
+        'oauth' => \LucaDegasperi\OAuth2Server\Middleware\OAuthMiddleware::class, //added for oauth2
     ];
 }
