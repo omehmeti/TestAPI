@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Oa",
+				"OAuth2"
+			],
+			[
 				"S",
 				"Support〔namespace〕"
 			],
@@ -59,22 +63,30 @@
 	[
 		"/C/xampp/htdocs/PikaCardAPI",
 		"/C/xampp/htdocs/PikaCardAPI/app",
-		"/C/xampp/htdocs/PikaCardAPI/database",
-		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi",
-		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi/oauth2-server-laravel",
-		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi/oauth2-server-laravel/src",
-		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi/oauth2-server-laravel/src/Middleware",
-		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi/oauth2-server-laravel/src/Storage"
+		"/C/xampp/htdocs/PikaCardAPI/app/Http",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/Auth",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds",
+		"/C/xampp/htdocs/PikaCardAPI/storage/logs"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/PikaCardAPI/config/oauth2.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/PasswordVerifier.php",
+		"/C/xampp/htdocs/PikaCardAPI/storage/logs/laravel.log",
+		"/C/xampp/htdocs/PikaCardAPI/app/Exceptions/Handler.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/doctrine/instantiator/src/Doctrine/Instantiator/Instantiator.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/league/oauth2-server/src/Grant/PasswordGrant.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/OAuthClientSeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi/oauth2-server-laravel/src/Authorizer.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/routes.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/league/oauth2-server/src/Exception/InvalidRequestException.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi/oauth2-server-laravel/src/OAuth2ServerServiceProvider.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Kernel.php",
 		"/C/xampp/htdocs/PikaCardAPI/config/app.php",
 		"/C/xampp/htdocs/PikaCardAPI/composer.json",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MakerController.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Exceptions/Handler.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/routes.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/VehicleController.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Middleware/OnceAuth.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MakerVehiclesController.php",
@@ -85,7 +97,6 @@
 		"/C/xampp/htdocs/PikaCardAPI/app/Vehicle.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Maker.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/seeds/UsersSeed.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/seeds/DatabaseSeeder.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_14_080210_create_users.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/User.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateMakerRequest.php",
@@ -105,7 +116,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -120,6 +131,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"unserialize",
 			"//",
 			"=users",
 			"FormRequest",
@@ -198,6 +210,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"passwordgrant",
+				"vendor\\league\\oauth2-server\\src\\Grant\\PasswordGrant.php"
+			],
+			[
+				"invalidrequestexception",
+				"vendor\\league\\oauth2-server\\src\\Exception\\InvalidRequestException.php"
+			],
+			[
+				"authorizer",
+				"vendor\\lucadegasperi\\oauth2-server-laravel\\src\\Authorizer.php"
+			],
 			[
 				"authenticatewithbaci",
 				"vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\AuthenticateWithBasicAuth.php"
