@@ -1,0 +1,58 @@
+-- Create table
+create table COMPANY_TYPES
+(
+  code        VARCHAR2(2 CHAR) not null,
+  definition  VARCHAR2(25 CHAR) not null,
+  inserted_by VARCHAR2(20 CHAR),
+  insert_date DATE,
+  amended_by  VARCHAR2(20 CHAR),
+  amend_date  DATE,
+  image       BLOB
+)
+tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 5M
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table COMPANY_TYPES
+  is 'COMPANY TYPES. DO NOT CHANGE EXISTING TYPES. THEY ARE USED BY THE APPLICATION. YOU CAN ADD NEW TYPES.';
+-- Add comments to the columns 
+comment on column COMPANY_TYPES.code
+  is 'PK OF THE TABLE';
+comment on column COMPANY_TYPES.definition
+  is 'DEFINITION';
+comment on column COMPANY_TYPES.inserted_by
+  is 'USER WHO INSERTED THE RECORD (AUDITING PURPOSES)';
+comment on column COMPANY_TYPES.insert_date
+  is 'INSERT DATE (AUDITING PURPOSES)';
+comment on column COMPANY_TYPES.amended_by
+  is 'USER WHO AMENDED THE RECORD (AUDITING PURPOSES)';
+comment on column COMPANY_TYPES.amend_date
+  is 'AMEND DATE (AUDITING PURPOSES)';
+comment on column COMPANY_TYPES.image
+  is 'IMAGE CATEGORIZING THE COMPANY TYPE';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table COMPANY_TYPES
+  add constraint PK#COMPANY_TYPES primary key (CODE)
+  using index 
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Grant/Revoke object privileges 
+grant select on COMPANY_TYPES to CRANE_PC_BO;
+grant select on COMPANY_TYPES to CRANE_PC_RO;

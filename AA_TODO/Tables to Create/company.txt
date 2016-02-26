@@ -1,0 +1,151 @@
+-- Create table
+create table COMPANIES
+(
+  code                           VARCHAR2(10 CHAR) not null,
+  name                           VARCHAR2(30 CHAR) not null,
+  type                           VARCHAR2(2 CHAR) not null,
+  start_date                     DATE not null,
+  end_date                       DATE,
+  addr                           VARCHAR2(60 CHAR),
+  zip_code                       VARCHAR2(10 CHAR),
+  city                           VARCHAR2(30 CHAR),
+  country                        VARCHAR2(30 CHAR),
+  tel                            VARCHAR2(15 CHAR),
+  e_mail                         VARCHAR2(50 CHAR),
+  fax                            VARCHAR2(15 CHAR),
+  cont_name                      VARCHAR2(25 CHAR),
+  cont_surname                   VARCHAR2(25 CHAR),
+  accounting_customer_number     VARCHAR2(30 CHAR),
+  accounting_location_number     VARCHAR2(30 CHAR),
+  include_in_monthly_invoice     VARCHAR2(1 CHAR),
+  iata_airline_number            VARCHAR2(4 CHAR),
+  adjustment_allowed             VARCHAR2(1 CHAR) default 'T',
+  inserted_by                    VARCHAR2(20 CHAR),
+  insert_date                    DATE,
+  amended_by                     VARCHAR2(20 CHAR),
+  amend_date                     DATE,
+  visible_on_the_web             VARCHAR2(1 CHAR) default 'T',
+  allience_carrier               VARCHAR2(1 CHAR) default 'F',
+  ftl_cs_duplicate               VARCHAR2(1 CHAR) default 'F',
+  logo                           BLOB,
+  settlement_curr_code           CHAR(3 CHAR),
+  redemption_rule_per_leg        VARCHAR2(1) default 'F' not null,
+  allow_activity_correction      VARCHAR2(1) default 'F' not null,
+  diff_bw_enrol_and_sc_earn_days NUMBER default 0,
+  use_tier_points                VARCHAR2(1) default 'F',
+  use_award_points               VARCHAR2(1) default 'T',
+  include_in_pending_act_process VARCHAR2(1) default 'T' not null,
+  allow_retro                    VARCHAR2(1) default 'F',
+  city2city_check                VARCHAR2(1) default 'F',
+  check_name_surname             VARCHAR2(1) default 'F',
+  is_partner                     VARCHAR2(1)
+)
+tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 5M
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table COMPANIES
+  is 'ALL PARTNER COMPANIES';
+-- Add comments to the columns 
+comment on column COMPANIES.code
+  is 'PK OF THE TABLE';
+comment on column COMPANIES.name
+  is 'NAME';
+comment on column COMPANIES.type
+  is 'COMPANY TYPE. FK FROM COMPANY TYPES.';
+comment on column COMPANIES.start_date
+  is 'INFO PURPOSE ONLY START DATE';
+comment on column COMPANIES.end_date
+  is 'INFO PURPOSE ONLY END DATE';
+comment on column COMPANIES.addr
+  is 'INFO PURPOSE ONLY ADDR';
+comment on column COMPANIES.zip_code
+  is 'INFO PURPOSE ONLY ZIP_CODE';
+comment on column COMPANIES.city
+  is 'INFO PURPOSE ONLY CITY';
+comment on column COMPANIES.country
+  is 'INFO PURPOSE ONLY COUNTRY';
+comment on column COMPANIES.tel
+  is 'INFO PURPOSE ONLY TEL';
+comment on column COMPANIES.e_mail
+  is 'INFO PURPOSE ONLY E_MAIL';
+comment on column COMPANIES.fax
+  is 'INFO PURPOSE ONLY FAX';
+comment on column COMPANIES.cont_name
+  is 'INFO PURPOSE ONLY CONT_NAME';
+comment on column COMPANIES.cont_surname
+  is 'INFO PURPOSE ONLY CONT_SURNAME';
+comment on column COMPANIES.accounting_customer_number
+  is 'PK OF THIS COMPANY IN THE ACCOUNTING SYSTEM';
+comment on column COMPANIES.accounting_location_number
+  is 'LOCATION OF THIS COMPANY IN THE ACCOUNTING SYSTEM';
+comment on column COMPANIES.include_in_monthly_invoice
+  is '''T'': GENERATE INVOICE IN THE PARTNER INVOICE INTERFACE. ''F'': DON''T GENERATE';
+comment on column COMPANIES.iata_airline_number
+  is 'AIRLINE NUMBER DEFINED AT IATA';
+comment on column COMPANIES.adjustment_allowed
+  is 'WHETHER IS ADJUSTMENT ALLOWED OR NOT. VALUE TAKES EITHER ''T'' OR ''F''';
+comment on column COMPANIES.inserted_by
+  is 'USER WHO INSERTED THE RECORD (AUDITING PURPOSES)';
+comment on column COMPANIES.insert_date
+  is 'INSERT DATE (AUDITING PURPOSES)';
+comment on column COMPANIES.amended_by
+  is 'USER WHO AMENDED THE RECORD (AUDITING PURPOSES)';
+comment on column COMPANIES.amend_date
+  is 'AMEND DATE (AUDITING PURPOSES)';
+comment on column COMPANIES.visible_on_the_web
+  is 'WHETHER THE PARTNER IS VISIBLE ON THE INTERNET OR NOT';
+comment on column COMPANIES.allience_carrier
+  is 'IS THE PARTNER A ONEWORLD CARRIER? ';
+comment on column COMPANIES.ftl_cs_duplicate
+  is 'FLAG TO DECIDE WHETHER THE CARRIER REQUIRES A CONTROL FOR CODESHARE FLIGHTS RECEIVED THROUGH FTL';
+comment on column COMPANIES.logo
+  is 'COMPANY LOGO (FIXED WIDHT, SAY 130x80)';
+comment on column COMPANIES.settlement_curr_code
+  is 'All settlements with this partner will be done in this currency';
+comment on column COMPANIES.redemption_rule_per_leg
+  is 'T: Redemption rule will be matched per leg and total points will be returned at the end';
+comment on column COMPANIES.allow_activity_correction
+  is 'Activity correction is company based';
+comment on column COMPANIES.diff_bw_enrol_and_sc_earn_days
+  is 'Difference Between Enrollment and Status Credit earn for retro activities';
+comment on column COMPANIES.use_tier_points
+  is 'Allow tier points for manually entered activies';
+comment on column COMPANIES.use_award_points
+  is 'Allow award points for manually entered activies';
+comment on column COMPANIES.include_in_pending_act_process
+  is 'Pending Activity Process ignores this company records when set to ''F''';
+comment on column COMPANIES.allow_retro
+  is 'Is allowed to insert retro for this company form CraneUser.';
+comment on column COMPANIES.city2city_check
+  is 'To check if city2city definitions will be checked in get_valid_route';
+comment on column COMPANIES.check_name_surname
+  is 'Check Name Surname for Nonair Activities of this Company';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table COMPANIES
+  add constraint PK#COMPANIES primary key (CODE)
+  using index 
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Grant/Revoke object privileges 
+grant select on COMPANIES to CRANE_PC_BO;
+grant select on COMPANIES to CRANE_PC_RO;
+grant select on COMPANIES to CRANE_4C_PEGASUS;
+grant select, insert, update, delete on COMPANIES to HAPMAIL_PC;

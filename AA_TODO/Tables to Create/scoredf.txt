@@ -1,0 +1,276 @@
+-- Create table
+create table SCOREDEF
+(
+  id                             NUMBER not null,
+  airline_carrier                VARCHAR2(10 CHAR),
+  type                           VARCHAR2(5 CHAR) not null,
+  flight_class                   VARCHAR2(1 CHAR),
+  tour_code                      VARCHAR2(14 CHAR),
+  origin                         VARCHAR2(10 CHAR),
+  destination                    VARCHAR2(10 CHAR),
+  start_date                     DATE,
+  end_date                       DATE,
+  dayofweek                      VARCHAR2(7 CHAR),
+  mile                           NUMBER,
+  add_point                      NUMBER,
+  add_mile                       NUMBER,
+  mul_point                      NUMBER,
+  mul_mile                       NUMBER,
+  max_point                      NUMBER,
+  max_mile                       NUMBER,
+  min_point                      NUMBER,
+  min_mile                       NUMBER,
+  class_grouped                  CHAR(1 CHAR),
+  class_group_code               VARCHAR2(10 CHAR),
+  fltno_grouped                  CHAR(1 CHAR),
+  fltno_group_code               VARCHAR2(10 CHAR),
+  status                         CHAR(1 CHAR),
+  carrier_grouped                CHAR(1 CHAR),
+  carrier_group_code             VARCHAR2(10 CHAR),
+  bonus_explanation              VARCHAR2(255 CHAR),
+  flyer_card_type                VARCHAR2(5 CHAR),
+  card_grouped                   CHAR(1 CHAR),
+  card_group_code                VARCHAR2(10 CHAR),
+  priority                       NUMBER,
+  booking_start_date             DATE,
+  booking_end_date               DATE,
+  booking_office_id              VARCHAR2(25 CHAR),
+  member_segment_seq             NUMBER,
+  flt_count                      NUMBER,
+  rule_statistic_code            VARCHAR2(10 CHAR),
+  main_child                     VARCHAR2(1 CHAR),
+  apply_to                       VARCHAR2(1 CHAR),
+  domestic_international         VARCHAR2(1 CHAR) default 'B',
+  add_tpm                        NUMBER,
+  mul_tpm                        NUMBER,
+  max_tpm                        NUMBER,
+  min_tpm                        NUMBER,
+  inserted_by                    VARCHAR2(20 CHAR),
+  insert_date                    DATE,
+  amended_by                     VARCHAR2(20 CHAR),
+  amend_date                     DATE,
+  act_classification             VARCHAR2(20 CHAR),
+  company_branch_seq             NUMBER,
+  unit_type                      VARCHAR2(10 CHAR),
+  suppress_if_zero_earn          VARCHAR2(1 CHAR),
+  is_tpm_used                    VARCHAR2(1 CHAR) default 'T',
+  promotion_code                 VARCHAR2(30 CHAR),
+  campaign_isn                   NUMBER,
+  from_distance                  NUMBER,
+  to_distance                    NUMBER,
+  flt_range_group_code_valid     VARCHAR2(10 CHAR),
+  flt_range_group_code_exclusive VARCHAR2(10 CHAR),
+  flown_class                    VARCHAR2(1 CHAR),
+  flown_class_grouped            CHAR(1 CHAR),
+  flown_class_group_code         VARCHAR2(10 CHAR),
+  route_grouped                  CHAR(1 CHAR),
+  origin_group_code              VARCHAR2(10 CHAR),
+  destination_group_code         VARCHAR2(10 CHAR),
+  custom_promotion               VARCHAR2(1 CHAR)
+)
+tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 5M
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table SCOREDEF
+  is 'BONUS RULES TABLE. IF A COLUMN IS BLANK, IT MEANS APPLY TO ALL RECORDS.';
+-- Add comments to the columns 
+comment on column SCOREDEF.id
+  is 'PK OF THE TABLE';
+comment on column SCOREDEF.airline_carrier
+  is 'SINGLE COMPANY OF THE BONUS RULE . FK FROM COMPANIES';
+comment on column SCOREDEF.type
+  is 'it is used for activity type declaraion F:flight;B:Bank;... Ozkan';
+comment on column SCOREDEF.flight_class
+  is 'SINGLE CLASS';
+comment on column SCOREDEF.tour_code
+  is 'SINGLE FLIGHT NUMBER';
+comment on column SCOREDEF.origin
+  is 'IF LENGTH OF ORIGIN>3 THEN GROUPED, FK FROM CITY_GROUPS. ELSE FK FROM PORTS';
+comment on column SCOREDEF.destination
+  is 'IF LENGTH OF DESTINATION>3 THEN GROUPED, FK FROM CITY_GROUPS. ELSE FK FROM PORTS';
+comment on column SCOREDEF.start_date
+  is 'START DATE';
+comment on column SCOREDEF.end_date
+  is 'END DATE';
+comment on column SCOREDEF.dayofweek
+  is 'DAYS OF WEEK THAT BONUS RULES APPLY TO. EG: 145 MEANS THE 1ST, 4TH AND 5TH DAYS OF THE WEEK (CHECK THE 1ST DAY)';
+comment on column SCOREDEF.mile
+  is 'INFO PURPOSE ONLY. IF ORG-DEST IS NOT GROUPED, TPM MILES FOR THE ROUTE';
+comment on column SCOREDEF.add_point
+  is 'ADDITIONAL AWARD POINTS THAT WILL BE GIVEN FOR THIS RULE';
+comment on column SCOREDEF.add_mile
+  is 'ADDITIONAL TIER POINTS THAT WILL BE GIVEN FOR THIS RULE';
+comment on column SCOREDEF.mul_point
+  is 'THIS VALUE IS MULTIPLIED BY THE (BASE POINTS OR CURRENT POINTS ACCORDING TO APPLY_TO FIELD)';
+comment on column SCOREDEF.mul_mile
+  is 'THIS VALUE IS MULTIPLIED BY THE (BASE MILES OR CURRENT MILES ACCORDING TO APPLY_TO FIELD)';
+comment on column SCOREDEF.max_point
+  is 'MAXIMUM POINTS THAT THIS RULE CAN GIVE';
+comment on column SCOREDEF.max_mile
+  is 'MAXIMUM MILES THAT THIS RULE CAN GIVE';
+comment on column SCOREDEF.min_point
+  is 'MINIMUM POINTS THAT THIS RULE CAN GIVE';
+comment on column SCOREDEF.min_mile
+  is 'MINIMUM MILES THAT THIS RULE CAN GIVE';
+comment on column SCOREDEF.class_grouped
+  is '''T'' : USE THE CLASS_GROUP_CODE. ''F'': USE THE FLIGHT_CLASS';
+comment on column SCOREDEF.class_group_code
+  is 'GROUPED CLASSES. FK FROM CLASS_GROUPS';
+comment on column SCOREDEF.fltno_grouped
+  is '''T'' : USE THE FLTNO_GROUP_CODE. ''F'': USE THE TOUR_CODE';
+comment on column SCOREDEF.fltno_group_code
+  is 'GROUPED FLIGHT NUMBERS. FK FROM FLIGHTNO_GROUPS';
+comment on column SCOREDEF.status
+  is '''T'' : RULE IS ACTIVE  ''F'' : RULE IS INACTIVE AND IS NOT APPLIED.';
+comment on column SCOREDEF.carrier_grouped
+  is '''T'' : USE THE CARRIER_GROUP_CODE. ''F'': USE THE AIRLINE_CARRIER';
+comment on column SCOREDEF.carrier_group_code
+  is 'GROUPED COMPANY. FK FROM CARRIER GROUPS';
+comment on column SCOREDEF.bonus_explanation
+  is 'FREE TEXT EXPLANATION. INTERNAL USE ONLY';
+comment on column SCOREDEF.flyer_card_type
+  is 'SINGLE FLYER_CARD_TYPE FK FROM FLYER_CARDS_DEF';
+comment on column SCOREDEF.card_grouped
+  is '''T'' : USE THE CARD_GROUP_CODE. ''F'': USE THE FLYER_CARD_TYPE';
+comment on column SCOREDEF.card_group_code
+  is 'GROUPED CARDS. FK FROM CARD_GROUPS';
+comment on column SCOREDEF.priority
+  is 'SHOULD NOT BE NEEDED IF ALL RULES ARE CORRECTLY DEFINED. IF MORE THAN ONE MAIN RULE MATHCES THE ACTIVITY, HIGHER PRIORITY IS CONSIDERED.';
+comment on column SCOREDEF.booking_start_date
+  is 'BOOKING_START_DATE';
+comment on column SCOREDEF.booking_end_date
+  is 'BOOKING_END_DATE';
+comment on column SCOREDEF.booking_office_id
+  is 'BOOKING_OFFICE_ID. FK FROM BOOKING_OFFICES';
+comment on column SCOREDEF.member_segment_seq
+  is 'IF THIS RULE WILL APPLY TO ONLY ONE SEGMENT, THEN SEGMENT_SEQ IS USED. FK FROM MEMBER_SEGMENTS';
+comment on column SCOREDEF.flt_count
+  is 'MULTIPLIER FOR THE FLIGHT COUNT. ALWAYS APPLIES TO CURRENT FLT_COUNT MULTIPLIER.';
+comment on column SCOREDEF.rule_statistic_code
+  is 'REPORTING PURPOSES ONLY. WHILE REPORTING, BONUS_ACTS ARE GROUPED AND SUMMED BASED ON THIS FIELD.';
+comment on column SCOREDEF.main_child
+  is '''M'' : MAIN RULE.  ''C'' : CHILD RULE';
+comment on column SCOREDEF.apply_to
+  is 'B : MULTIPLY BASE MILES BY MUL_POINT AND MUL_MILE.   C: MULTIPLY CURRENT MILES BY MUL_POINT AND MUL_MILE';
+comment on column SCOREDEF.domestic_international
+  is 'RULE APPLIES TO B: BOTH D:DOMESTIC I:INTERNATIONAL FLIGHTS';
+comment on column SCOREDEF.add_tpm
+  is 'BILLING PURPOSE ONLY. ADDITIONAL TPM MILES THAT WILL BE GIVEN FOR THIS RULE.';
+comment on column SCOREDEF.mul_tpm
+  is 'BILLING PURPOSE ONLY. THIS VALUE IS MULTIPLIED BY THE (BASE TPM OR CURRENT TPM ACCORDING TO APPLY_TO FIELD)';
+comment on column SCOREDEF.max_tpm
+  is 'BILLING PURPOSE ONLY. MAXIMUM TPM THAT THIS RULE CAN GIVE';
+comment on column SCOREDEF.min_tpm
+  is 'BILLING PURPOSE ONLY. MINIMUM TPM THAT THIS RULE CAN GIVE';
+comment on column SCOREDEF.inserted_by
+  is 'USER WHO INSERTED THE RECORD (AUDITING PURPOSES)';
+comment on column SCOREDEF.insert_date
+  is 'INSERT DATE (AUDITING PURPOSES)';
+comment on column SCOREDEF.amended_by
+  is 'USER WHO AMENDED THE RECORD (AUDITING PURPOSES)';
+comment on column SCOREDEF.amend_date
+  is 'AMEND DATE (AUDITING PURPOSES)';
+comment on column SCOREDEF.act_classification
+  is 'ACTIVITY CLASSIFICATION';
+comment on column SCOREDEF.company_branch_seq
+  is 'BRANCH OF THE COMPANY.FK FROM COMPANY_BRANCHES.';
+comment on column SCOREDEF.unit_type
+  is 'UNIT TYPE FOR NON-AIR RULES. FK FROM SCOREDEF_UNIT_TYPES.';
+comment on column SCOREDEF.suppress_if_zero_earn
+  is 'INDICATES IF THE BONUS RULE WILL BE SUPPRESSED WHEN THERE IS NO EARN FROM THAT BONUS RULE. T: SUPPRESS , F: DO NOT SUPPRESS.';
+comment on column SCOREDEF.is_tpm_used
+  is 'INDICATES IF THE TPM VALUE OR THE COUPON VALUE IS USED TO CALCULATE THE ACCRUAL.T:TPM USED , F: COUPON VALUE USED';
+comment on column SCOREDEF.campaign_isn
+  is 'ISN OF THE RELATED CAMPAIGN';
+comment on column SCOREDEF.from_distance
+  is 'RULE APPLIES WHEN FLIGHT DISTANCE IS LONGER THAN FROM_DISTANCE';
+comment on column SCOREDEF.to_distance
+  is 'RULE APPLIES WHEN FLIGHT DISTANCE IS SHORTER THAN TO_DISTANCE';
+comment on column SCOREDEF.route_grouped
+  is 'T: GROUPED, F:NOT GROUPED';
+comment on column SCOREDEF.origin_group_code
+  is 'ORIGIN GROUP CODE';
+comment on column SCOREDEF.destination_group_code
+  is 'DESTINATION GROUP CODE';
+-- Create/Recreate indexes 
+create index IDX#MS_SEQ on SCOREDEF (MEMBER_SEGMENT_SEQ)
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX#47 on SCOREDEF (RULE_STATISTIC_CODE)
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table SCOREDEF
+  add constraint PK#SCOREDEF primary key (ID)
+  using index 
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table SCOREDEF
+  add constraint FK#SCOREDEF#CMPNY_ACT_CLSFTN foreign key (AIRLINE_CARRIER, ACT_CLASSIFICATION)
+  references COMPANY_ACT_CLASSIFICATIONS (COMPANY, CODE)
+  disable;
+alter table SCOREDEF
+  add constraint FK#SCOREDEF#GROUP_DEFS#CARRIER foreign key (CARRIER_GROUP_CODE)
+  references GROUP_DEFS (CODE);
+alter table SCOREDEF
+  add constraint FK#SCOREDEF#GROUP_DEFS#CLASS foreign key (CLASS_GROUP_CODE)
+  references GROUP_DEFS (CODE);
+alter table SCOREDEF
+  add constraint FK#SCOREDEF#GROUP_DEFS#FLTNO foreign key (FLTNO_GROUP_CODE)
+  references GROUP_DEFS (CODE);
+alter table SCOREDEF
+  add constraint FK#SCOREDEF#GROUP_DEFS#TIER foreign key (CARD_GROUP_CODE)
+  references GROUP_DEFS (CODE);
+alter table SCOREDEF
+  add constraint FK#SCOREDEF#SCOREDEF_TYPES foreign key (TYPE)
+  references SCOREDEF_TYPES (CODE);
+alter table SCOREDEF
+  add constraint FK#SCOREDEF#SCRDEF_UNTTYP foreign key (UNIT_TYPE)
+  references SCOREDEF_UNIT_TYPES (CODE);
+alter table SCOREDEF
+  add constraint FK#SD#BOOKING_OFFICE foreign key (BOOKING_OFFICE_ID)
+  references BOOKING_OFFICES (OFFICE_ID)
+  deferrable initially deferred;
+alter table SCOREDEF
+  add constraint FK#SD#CAMPAIGN_ISN foreign key (CAMPAIGN_ISN)
+  references CAMPAIGN_MANAGEMENT (CAMPAIGN_ISN);
+-- Grant/Revoke object privileges 
+grant select on SCOREDEF to CRANE_PC_BO;
+grant select on SCOREDEF to CRANE_PC_RO;
+grant select on SCOREDEF to PAX_SELECT;

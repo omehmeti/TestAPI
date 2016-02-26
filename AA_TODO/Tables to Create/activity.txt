@@ -1,0 +1,398 @@
+-- Create table
+create table ACTIVITY
+(
+  act_seq                  NUMBER not null,
+  flyer_id                 VARCHAR2(16 CHAR) not null,
+  activity_type            CHAR(1 CHAR),
+  activity_date            DATE,
+  company                  VARCHAR2(10 CHAR) not null,
+  activity_classification  VARCHAR2(10 CHAR),
+  points                   NUMBER default 0,
+  miles                    NUMBER default 0,
+  flt_count                NUMBER default 0,
+  definition               VARCHAR2(100 CHAR),
+  status                   VARCHAR2(2 CHAR) default 'OK' not null,
+  origin                   VARCHAR2(3 CHAR),
+  destination              VARCHAR2(3 CHAR),
+  class_code               VARCHAR2(1 CHAR),
+  flown_class              VARCHAR2(1 CHAR),
+  flt_number               VARCHAR2(7 CHAR),
+  pnr                      VARCHAR2(6 CHAR),
+  referance                VARCHAR2(35 CHAR),
+  billing_base             NUMBER,
+  billing_bonus            NUMBER,
+  explanation              VARCHAR2(255 CHAR),
+  cut_date                 DATE,
+  acc_no                   VARCHAR2(16 CHAR),
+  flyer_card_type          VARCHAR2(5 CHAR),
+  entry_type               CHAR(1),
+  partner_seq              VARCHAR2(20 CHAR),
+  coupon_fare              NUMBER,
+  expire_processed         VARCHAR2(1 CHAR),
+  expire_date              DATE,
+  accounting_seq           NUMBER,
+  finance_transaction_seq  NUMBER,
+  booking_date             DATE,
+  booking_office_id        VARCHAR2(25 CHAR),
+  transaction_flyer_id     VARCHAR2(16 CHAR),
+  transaction_activity_seq NUMBER,
+  pax_name                 VARCHAR2(60 CHAR),
+  transaction_location     VARCHAR2(100 CHAR),
+  sales_values             NUMBER,
+  checkin_date             DATE,
+  checkout_date            DATE,
+  adjustment_code          VARCHAR2(10 CHAR),
+  rev_acc_process_date     DATE,
+  invoiced                 VARCHAR2(1 CHAR) default 'F',
+  manual_base_points       NUMBER,
+  manual_bonus_points      NUMBER,
+  manual_tier_points       NUMBER,
+  user_name                VARCHAR2(30 CHAR),
+  entry_time               DATE default sysdate,
+  inserted_by              VARCHAR2(20 CHAR),
+  insert_date              DATE,
+  amended_by               VARCHAR2(20 CHAR),
+  amend_date               DATE,
+  plat_miles               NUMBER default 0,
+  plat_flt_count           NUMBER default 0,
+  is_transferred           VARCHAR2(1 CHAR),
+  used_all                 VARCHAR2(1 CHAR),
+  promotion_code           VARCHAR2(30 CHAR),
+  used_points              NUMBER default 0 not null,
+  migration_reference      VARCHAR2(20),
+  correction_done          VARCHAR2(1) default 'F' not null,
+  correction_act_seq       NUMBER,
+  sales_agent_id           VARCHAR2(25),
+  redeposit_id             NUMBER,
+  coupon_number            VARCHAR2(30),
+  process_status           VARCHAR2(10),
+  rule_code                NUMBER
+)
+tablespace CRANE_PC_DATA
+  pctfree 20
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 5M
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table ACTIVITY
+  is 'MEMBER ACTIVITIES';
+-- Add comments to the columns 
+comment on column ACTIVITY.act_seq
+  is 'PK OF THIS TABLE';
+comment on column ACTIVITY.flyer_id
+  is 'FK TO MEMBER ID';
+comment on column ACTIVITY.activity_type
+  is 'F=Flight, P=Non-Airline Spend Activity B: Non-airline points activity, A=Adjustment';
+comment on column ACTIVITY.activity_date
+  is 'DATE OF ACTIVITY';
+comment on column ACTIVITY.company
+  is 'FK TO COMPANIES. THE COMPANY OF THE ACTIVITY';
+comment on column ACTIVITY.activity_classification
+  is 'FK TO COMPANY_ACT_CLSF. THE COMP. ACT. CLSF. OF THE ACTIVITY';
+comment on column ACTIVITY.points
+  is 'AWARD POINTS';
+comment on column ACTIVITY.miles
+  is 'TIER POINTS (FOR CARD LEVELS)';
+comment on column ACTIVITY.flt_count
+  is 'SECTOR COUNT FOR THE FLIGHT.';
+comment on column ACTIVITY.definition
+  is 'FREE TEXT DEFINITION. DISPLAYED ON STATEMENTS';
+comment on column ACTIVITY.status
+  is 'ST= STATEMENTED. OTHERWISE NOT STATEMENTED';
+comment on column ACTIVITY.origin
+  is 'PORT CODE OF ORIGIN';
+comment on column ACTIVITY.destination
+  is 'PORT CODE OF DESTINATION';
+comment on column ACTIVITY.class_code
+  is 'PAID CLASS';
+comment on column ACTIVITY.flown_class
+  is 'Flown Class';
+comment on column ACTIVITY.flt_number
+  is 'FLIGHT NUMBER. 2 LETTER AIRLINE CODE + 4 DIGIT FLIGHT CODE';
+comment on column ACTIVITY.pnr
+  is 'PNR';
+comment on column ACTIVITY.referance
+  is 'TICKET NUMBER';
+comment on column ACTIVITY.billing_base
+  is 'BASE POINTS/MILES FOR BILLING';
+comment on column ACTIVITY.billing_bonus
+  is 'BASE POINTS/MILES FOR BILLING';
+comment on column ACTIVITY.explanation
+  is 'FREE TEXT EXPLANATION. NOT DISPLAYED ON STATEMENTS. INTERNAL USE ONLY';
+comment on column ACTIVITY.cut_date
+  is 'DATE OF STATEMENT FOR THIS ACTIVITY';
+comment on column ACTIVITY.acc_no
+  is 'WHEN MERGED OR INHERITED, MEMBER ID OF THE ORIGINAL TRANSACTION IS STORED HERE';
+comment on column ACTIVITY.flyer_card_type
+  is 'TIER LEVEL OF THE MEMBER DURING THIS ACTIVITY. FK TO FLYER_CARDS_DEF';
+comment on column ACTIVITY.entry_type
+  is 'A=AUTOMATIC M=MANUAL';
+comment on column ACTIVITY.partner_seq
+  is 'UNIQUE IDENTIFIER OF THIS TRANSACTION IN THE PARTNER DB';
+comment on column ACTIVITY.coupon_fare
+  is 'FARE OF THE COUPON';
+comment on column ACTIVITY.expire_processed
+  is 'T=THIS ACTIVITY IS USED IN AN AWARD. OTHERWISE F OR NULL';
+comment on column ACTIVITY.expire_date
+  is 'WHEN THIS ACTIVITY POINTS WILL EXPIRE';
+comment on column ACTIVITY.accounting_seq
+  is 'FK FROM ACCOUNTING_TRANSFER_DETAILS. THE PERIOD THAT THIS ACTIVITY IS ACCOUNTED';
+comment on column ACTIVITY.finance_transaction_seq
+  is 'FK TO FINANCE_TRANSACTIONS';
+comment on column ACTIVITY.booking_date
+  is 'BOOKING DATE OF THE FLIGHT';
+comment on column ACTIVITY.booking_office_id
+  is 'OFFICE WHERE BOOKING IS MADE';
+comment on column ACTIVITY.transaction_flyer_id
+  is 'IF THIS ACTIVITY COMES FROM A FAMILY MEMBER, THEN ID OF THE FAMILY MEMBER IS STORED HERE';
+comment on column ACTIVITY.transaction_activity_seq
+  is 'USED IF ACTIVITY BELONGS TO A FAMILY MEMBER';
+comment on column ACTIVITY.pax_name
+  is 'NAME OF THE PASSENGER ON THE TICKET';
+comment on column ACTIVITY.transaction_location
+  is 'NON-AIRLINE PARTNERS SEND THE LOCATION OF THE TRANSACTION';
+comment on column ACTIVITY.sales_values
+  is 'NON-AIRLINE PARTNERS SALES VALUE';
+comment on column ACTIVITY.checkin_date
+  is 'NON-AIRLINE PARTNERS CHECK-IN DATE';
+comment on column ACTIVITY.checkout_date
+  is 'NON-AIRLINE PARTNERS CHECK-OUT DATE';
+comment on column ACTIVITY.adjustment_code
+  is 'IF THIS IS AN ADJUSTMENT ACTIVITY, THEN FK FROM ADJUSTMENT_CODES';
+comment on column ACTIVITY.rev_acc_process_date
+  is 'REVENUE ACCOUNTING PROCESS DATE, USED FOR RETRO CLAIM PROCESSING';
+comment on column ACTIVITY.invoiced
+  is 'WHETHER THE ACTIVITY IS INVOICED OR NOT. F: FALSE P:PROCESSING T:TRUE';
+comment on column ACTIVITY.manual_base_points
+  is 'MANUALLY ENTERED BASE POINTS AMOUNT.USED FOR P2 ACTIVITY TYPE.';
+comment on column ACTIVITY.manual_bonus_points
+  is 'MANUALLY ENTERED BONUS POINTS AMOUNT.USED FOR P2 ACTIVITY TYPE.';
+comment on column ACTIVITY.manual_tier_points
+  is 'MANUALLY ENTERED TIER POINTS AMOUNT.USED FOR P2 ACTIVITY TYPE';
+comment on column ACTIVITY.user_name
+  is 'AGENT THAT ENTERED THIS ACTIVITY';
+comment on column ACTIVITY.entry_time
+  is 'ENTRY TIME OF THIS ACTIVITY';
+comment on column ACTIVITY.inserted_by
+  is 'USER WHO INSERTED THE RECORD (AUDITING PURPOSES)';
+comment on column ACTIVITY.insert_date
+  is 'INSERT DATE (AUDITING PURPOSES)';
+comment on column ACTIVITY.amended_by
+  is 'USER WHO AMENDED THE RECORD (AUDITING PURPOSES)';
+comment on column ACTIVITY.amend_date
+  is 'AMEND DATE (AUDITING PURPOSES)';
+comment on column ACTIVITY.plat_miles
+  is 'ADDED WITH THE MH PROJECT.A NEW POINT TYPE CALCULATED FROM THE AWARD OR TIER POINTS';
+comment on column ACTIVITY.plat_flt_count
+  is 'ADDED WITH THE MH PROJECT. A NEW FLIGHT COUNT TYPE CALCULATED FROM THE STANDARD FLIGHT COUNT';
+comment on column ACTIVITY.is_transferred
+  is 'T: ACTIVITY IS TRANSFERRED TO A RELATIVE , F: NOT TRANSFERRED';
+comment on column ACTIVITY.used_all
+  is 'T: ALL POINTS ARE USED FOR REDEMPTIONS , F: NOT ALL OF THE POINTS ARE USED FOR REDEMPTIONS';
+comment on column ACTIVITY.promotion_code
+  is 'USED FOR STORING THE CAMPAIGN CODES';
+comment on column ACTIVITY.used_points
+  is 'TOTAL POINTS USED FOR AWARDS FROM THE ACTIVITY';
+comment on column ACTIVITY.migration_reference
+  is 'This column is for holdig reference to migrated data. Never Drop';
+comment on column ACTIVITY.correction_done
+  is 'correction done on the activity';
+comment on column ACTIVITY.correction_act_seq
+  is 'correction activity referance';
+comment on column ACTIVITY.sales_agent_id
+  is 'Sales agent id';
+comment on column ACTIVITY.redeposit_id
+  is 'PGS - PARTIAL REDEPOSITED AWARD''S ID (MEMBER_AWD TABLE ID COLUMN)';
+comment on column ACTIVITY.process_status
+  is 'NULL:NEW RECORD PR:PROCESSING WH:WAITING FOR HANDBACK WE:WAITING FOR EXPORT OK:SUCCESSFUL';
+comment on column ACTIVITY.rule_code
+  is 'added for conjuction flight';
+-- Create/Recreate indexes 
+create index IDX#ACT_ACCOUNTING on ACTIVITY (ACCOUNTING_SEQ)
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 5M
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX#ACT_CAC on ACTIVITY (COMPANY, ACTIVITY_CLASSIFICATION)
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 5M
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX#ACT_DATE on ACTIVITY (ACTIVITY_DATE)
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX#ACT_FLYER_ID on ACTIVITY (FLYER_ID, TRUNC(ACTIVITY_DATE))
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 5M
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX#ACTIVITY#EXPIRE_DATE on ACTIVITY (EXPIRE_DATE)
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX#ACTIVITY_FLAYER_ID on ACTIVITY (FLYER_ID)
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX#ACTIVITY_STATUS on ACTIVITY (STATUS)
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 5M
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX#ACTIVITY#TRC_EXPR_DATE on ACTIVITY (TRUNC(EXPIRE_DATE))
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX#ACTIVITY#TRC_INS_DATE on ACTIVITY (TRUNC(INSERT_DATE))
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX#A_TRANSACTION_FLYER_ID on ACTIVITY (TRANSACTION_FLYER_ID)
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX#CUT_DATE on ACTIVITY (CUT_DATE)
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 5M
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IDX#TRX_ACT_SEQ on ACTIVITY (TRANSACTION_ACTIVITY_SEQ)
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table ACTIVITY
+  add constraint PK#ACTY primary key (ACT_SEQ)
+  using index 
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 1M
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table ACTIVITY
+  add constraint FK#ACT_ACC_SEQ foreign key (ACCOUNTING_SEQ)
+  references ACCOUNTING_TRANSFER (ACCOUNTING_SEQ)
+  deferrable initially deferred;
+alter table ACTIVITY
+  add constraint FK#ACT_ADJ_CODE foreign key (ADJUSTMENT_CODE)
+  references ADJUSTMENT_CODES (CODE)
+  deferrable initially deferred;
+alter table ACTIVITY
+  add constraint FK#ACT_FLYER_CARD foreign key (FLYER_CARD_TYPE)
+  references FLYER_CARDS_DEF (ID)
+  deferrable initially deferred;
+alter table ACTIVITY
+  add constraint FK#ACT_FLYER_ID foreign key (FLYER_ID)
+  references MEMBERS (ID)
+  deferrable initially deferred;
+alter table ACTIVITY
+  add constraint FK#ACTIVITY#CMPY_ACT_CLS foreign key (COMPANY, ACTIVITY_CLASSIFICATION)
+  references COMPANY_ACT_CLASSIFICATIONS (COMPANY, CODE);
+-- Grant/Revoke object privileges 
+grant select on ACTIVITY to CRANE_PC_BO;
+grant select on ACTIVITY to CRANE_PC_RO;
+grant select on ACTIVITY to PAX_SELECT;

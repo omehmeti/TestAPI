@@ -1,0 +1,58 @@
+------------------------
+--- User Operations: ---
+------------------------
+
+1. Register New User
+2. Update User Profile
+3. Delete User
+4. Login User
+5. Reset Password
+6. View User
+7. View Users
+
+-----------------------
+--- Welcome Points: ---
+-----------------------
+
+1. Enroll Welcome Points
+2. Referer Welcome Points
+
+---------------------------
+--- Partner Operations: ---
+---------------------------
+
+1. Register New Partner
+2. Update Partner Data
+3. Delete Partner
+4. View Partner
+5. View Partners
+6. Partner Points Win Rules
+7. Partner Points Spend Rules
+
+----------------------------
+--- Activity Operations: ---
+----------------------------
+
+1. Insert Activity
+2. Update Activity
+3. Delete Activity
+4. List all activities
+5. List single partner activity
+6. List single user activity
+
+-------------------------------
+--- Redeemption Operations: ---
+-------------------------------
+
+1. Insert Redeemption
+2. Update Redeemption
+3. Delete Redeemption
+4. List all Redeemption
+5. List single partner Redeemptions
+6. List single user Redeemptions
+
+----------------------
+--- Notifications: ---
+----------------------
+1. Insert notifications
+2. Send Notifications

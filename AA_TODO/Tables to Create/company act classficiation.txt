@@ -1,0 +1,98 @@
+-- Create table
+create table COMPANY_ACT_CLASSIFICATIONS
+(
+  cac_seq                 NUMBER not null,
+  code                    VARCHAR2(10 CHAR),
+  name                    VARCHAR2(50 CHAR),
+  company                 VARCHAR2(10 CHAR),
+  expiration_years        NUMBER,
+  text_english            VARCHAR2(50 CHAR),
+  x_text_local            VARCHAR2(50 CHAR),
+  status                  VARCHAR2(1 CHAR) default 'T' not null,
+  inserted_by             VARCHAR2(20 CHAR),
+  insert_date             DATE,
+  amended_by              VARCHAR2(20 CHAR),
+  amend_date              DATE,
+  expire_calculation_type VARCHAR2(1) default 'Y',
+  is_ssr                  VARCHAR2(1) default 'F'
+)
+tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 5M
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table COMPANY_ACT_CLASSIFICATIONS
+  is 'SUB ACTIVITY TYPES IN A COMPANY. CHILD TABLE OF COMPANIES';
+-- Add comments to the columns 
+comment on column COMPANY_ACT_CLASSIFICATIONS.cac_seq
+  is 'PK OF THE TABLE';
+comment on column COMPANY_ACT_CLASSIFICATIONS.code
+  is 'CODE FOR THE CLSF';
+comment on column COMPANY_ACT_CLASSIFICATIONS.name
+  is 'NAME FOR THE CLSF';
+comment on column COMPANY_ACT_CLASSIFICATIONS.company
+  is 'FK FROM COMPANIES';
+comment on column COMPANY_ACT_CLASSIFICATIONS.expiration_years
+  is 'EXPIRY YEARS FOR THE TYPE OF ACTIVITY';
+comment on column COMPANY_ACT_CLASSIFICATIONS.text_english
+  is 'DEFAULT DEFINITION FOR THE TRANSACTION';
+comment on column COMPANY_ACT_CLASSIFICATIONS.x_text_local
+  is 'DEFAULT DEFINITION FOR THE TRANSACTION IN LOCAL LANG';
+comment on column COMPANY_ACT_CLASSIFICATIONS.status
+  is '''T'' : ACTIVE ''F'': NOT USED ANYMORE';
+comment on column COMPANY_ACT_CLASSIFICATIONS.inserted_by
+  is 'USER WHO INSERTED THE RECORD (AUDITING PURPOSES)';
+comment on column COMPANY_ACT_CLASSIFICATIONS.insert_date
+  is 'INSERT DATE (AUDITING PURPOSES)';
+comment on column COMPANY_ACT_CLASSIFICATIONS.amended_by
+  is 'USER WHO AMENDED THE RECORD (AUDITING PURPOSES)';
+comment on column COMPANY_ACT_CLASSIFICATIONS.amend_date
+  is 'AMEND DATE (AUDITING PURPOSES)';
+comment on column COMPANY_ACT_CLASSIFICATIONS.expire_calculation_type
+  is 'IF NULL USE FROM CONFIG, ''E'' : EXACT_DATE ''M'':END OF MONTH ''Y'':END OF YEAR ''Q'': END OF QUARTER ''S'': END OF SIX MONTHS';
+comment on column COMPANY_ACT_CLASSIFICATIONS.is_ssr
+  is '''T'' : SSR ''F'': NOT SSR';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table COMPANY_ACT_CLASSIFICATIONS
+  add constraint PK#CAC primary key (CAC_SEQ)
+  using index 
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table COMPANY_ACT_CLASSIFICATIONS
+  add constraint UK#CAC unique (COMPANY, CODE)
+  using index 
+  tablespace CRANE_PC_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table COMPANY_ACT_CLASSIFICATIONS
+  add constraint FK#CAC_COMPANY foreign key (COMPANY)
+  references COMPANIES (CODE)
+  deferrable initially deferred;
+-- Grant/Revoke object privileges 
+grant select on COMPANY_ACT_CLASSIFICATIONS to CRANE_PC_BO;
+grant select on COMPANY_ACT_CLASSIFICATIONS to CRANE_PC_RO;
+grant select, insert, update, delete on COMPANY_ACT_CLASSIFICATIONS to HAPMAIL_PC;
