@@ -18,6 +18,7 @@ class UserDataModelTable extends Migration
             $table->string('surname',50);
             $table->date('birthdate');
             $table->string('email',100);
+            $table->enum('gender',['M','F','O']); // M-Male F-Female O-Other
             $table->date('start_date');
             $table->string('status',50);
             $table->string('communication_language',3);
