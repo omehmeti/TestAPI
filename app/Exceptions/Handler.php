@@ -53,9 +53,14 @@ class Handler extends ExceptionHandler
             return response()->json(['message'=>'TEST','code'=>400],400);
 
         }
+        else if ( !($e->getMessage() == '') ){
+            return response()->json(['message'=>$e->getMessage(),'code'=>400],400);
+        }else{
+            return parent::render($request, $e);
+        }
         
-        return response()->json(['message'=>$e->getMessage(),'code'=>400],400);
-        return parent::render($request, $e);
+        
+        
         
     }
 }

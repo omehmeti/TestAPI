@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class CountryModel extends Model
 {
-     protected $table = 'Country';
+    protected $table = 'country';
 
+    public $incrementing = false;
+    
 	protected $primaryKey = 'code';
 
-	protected $fillable = ['code','name'];
+	protected $fillable = ['code','name','test'];
 
-	protected $hidden = ['created_at','updated_at'];
+	protected $hidden = ['updated_at','created_at'];
 }

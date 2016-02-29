@@ -5,7 +5,10 @@ use Illuminate\Database\Eloquent\Model;
 use App\Maker;
 use App\Vehicle;
 use App\User;
+
 use App\Models\CountryModel;
+use App\Models\EnrollmentBonusModel;
+use App\Models\UserDataModel;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,6 +23,8 @@ class DatabaseSeeder extends Seeder
     	Maker::truncate();
     	Vehicle::truncate();
         CountryModel::truncate();
+        EnrollmentBonusModel::truncate();
+        UserDataModel::truncate();
         User::truncate();
         DB::table('oauth_clients')->truncate();
     	
@@ -30,6 +35,8 @@ class DatabaseSeeder extends Seeder
         $this->call('MakerSeed');
         $this->call('VehiclesSeed');
         $this->call('CountrySeed');
+        $this->call('EnrollmentBonusSeed');
+        //$this->call('UserDataSeed');
         $this->call('UsersSeed');
         $this->call('OAuthClientSeed');
         

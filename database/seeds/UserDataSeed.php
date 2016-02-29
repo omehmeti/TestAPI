@@ -2,11 +2,11 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use App\User;
 use App\Models\UserDataModel;
 use Faker\Factory as Faker;
 
-class UsersSeed extends Seeder
+
+class UserDataSeed extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,22 +15,13 @@ class UsersSeed extends Seeder
      */
     public function run()
     {
-    	
         $faker = Faker::create();
-        
         for( $i = 0; $i < 10; $i++ ){
-
-            $user_id = User::Create([
-                'email' => $faker->email,
-                'username' => $faker->userName,
-                'password' => Hash::make('pasword')
-            ]);
-
-            UserDataModel::create ([ 
-            'user_id' => $user_id->id,
+        UserDataModel::create ([ 
             'name' => $faker->name,
             'surname' => $faker->lastName, 
             'birthdate' => $faker->dateTimeThisCentury->format('Y-m-d'), 
+            'email' => $faker->email, 
             'gender' => array_rand(['M','F','O']), 
             'start_date' =>  $faker->dateTimeThisCentury->format('Y-m-d'), 
             'status' => array_rand(['AC','CX','DL']), 
@@ -48,7 +39,10 @@ class UsersSeed extends Seeder
             //'marital_status' => XXXXXXX, 
             //'marriage_date' => XXXXXXX         
            
-            ]);
-        }    
+        ]);
+
+       }
+        
+        
     }
 }
