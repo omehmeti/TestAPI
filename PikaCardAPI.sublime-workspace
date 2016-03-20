@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"fie",
+				"$field〔variable〕"
+			],
+			[
+				"us",
+				"username"
+			],
+			[
 				"time",
 				"timestamps"
 			],
@@ -27,6 +35,78 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/Http/Requests/CreateUserRequest.php",
+			"settings":
+			{
+				"buffer_size": 1676,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "database/migrations/2014_04_24_110151_create_oauth_scopes_table.php",
+			"settings":
+			{
+				"buffer_size": 1012,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database/migrations/2016_02_20_065413_country_table.php",
+			"settings":
+			{
+				"buffer_size": 589,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database/seeds/UsersSeed.php",
+			"settings":
+			{
+				"buffer_size": 1688,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "database/seeds/DatabaseSeeder.php",
+			"settings":
+			{
+				"buffer_size": 1072,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/routes.php",
+			"settings":
+			{
+				"buffer_size": 1598,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/UserDataController.php",
+			"settings":
+			{
+				"buffer_size": 3237,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/PasswordVerifier.php",
+			"settings":
+			{
+				"buffer_size": 1033,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database/seeds/UserDataSeed.php",
+			"settings":
+			{
+				"buffer_size": 1471,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -66,27 +146,30 @@
 	"expanded_folders":
 	[
 		"/C/xampp/htdocs/PikaCardAPI",
+		"/C/xampp/htdocs/PikaCardAPI/AA_TODO",
 		"/C/xampp/htdocs/PikaCardAPI/app",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http",
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/Middleware",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers",
 		"/C/xampp/htdocs/PikaCardAPI/app/Models",
-		"/C/xampp/htdocs/PikaCardAPI/database",
-		"/C/xampp/htdocs/PikaCardAPI/database/migrations",
 		"/C/xampp/htdocs/PikaCardAPI/database/seeds"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/PikaCardAPI/vendor/league/flysystem/src/Exception.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/PasswordVerifier.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MakerVehiclesController.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/UserDataController.php",
+		"/C/xampp/htdocs/PikaCardAPI/storage/logs/laravel.log",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/UsersSeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/config/app.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/AuthHandler.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/Auth/AuthController.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/seeds/UsersSeed.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/User.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/routes.php",
-		"/C/xampp/htdocs/PikaCardAPI/storage/logs/laravel.log",
 		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_04_21_162556_user_data_model_table.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Models/UserDataModel.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_14_080210_create_users.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/PasswordVerifier.php",
 		"/C/xampp/htdocs/PikaCardAPI/config/oauth2.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/seeds/DatabaseSeeder.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Models/CountryModel.php",
@@ -116,7 +199,6 @@
 		"/C/xampp/htdocs/PikaCardAPI/app/app/Models/UserDataModel.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/league/oauth2-server/src/Exception/InvalidRequestException.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/league/oauth2-server/src/AuthorizationServer.php",
-		"/C/xampp/htdocs/PikaCardAPI/vendor/league/flysystem/src/Exception.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi/oauth2-server-laravel/src/Authorizer.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Vehicle.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Maker.php",
@@ -125,10 +207,8 @@
 		"/C/xampp/htdocs/PikaCardAPI/database/seeds/OAuthClientSeed.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi/oauth2-server-laravel/src/OAuth2ServerServiceProvider.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Kernel.php",
-		"/C/xampp/htdocs/PikaCardAPI/config/app.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/VehicleController.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Middleware/OnceAuth.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MakerVehiclesController.php",
 		"/C/xampp/htdocs/PikaCardAPI/.env",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MyController.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Auth/Middleware/AuthenticateWithBasicAuth.php",
@@ -163,6 +243,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Hash::",
+			"verify",
 			"->authenticate",
 			"OAuth->authenticate",
 			"'email'=>'email'",
@@ -237,8 +319,280 @@
 	"groups":
 	[
 		{
+			"selected": 7,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/Http/Requests/CreateUserRequest.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1676,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								856,
+								864
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "database/migrations/2014_04_24_110151_create_oauth_scopes_table.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1012,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								668,
+								680
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "database/migrations/2016_02_20_065413_country_table.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 589,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								589,
+								589
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "database/seeds/UsersSeed.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1688,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1532,
+								1532
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "database/seeds/DatabaseSeeder.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1072,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								299,
+								299
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/Http/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1598,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1312,
+								1318
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/Http/Controllers/UserDataController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								291,
+								318
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/Http/Controllers/PasswordVerifier.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1033,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "database/seeds/UserDataSeed.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1471,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								704,
+								704
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -291,16 +645,28 @@
 		"selected_items":
 		[
 			[
+				"exce",
+				"vendor\\league\\flysystem\\src\\Exception.php"
+			],
+			[
+				"rout",
+				"app\\Http\\routes.php"
+			],
+			[
+				"userdata",
+				"database\\seeds\\UserDataSeed.php"
+			],
+			[
+				"lara",
+				"storage\\logs\\laravel.log"
+			],
+			[
 				"oauthcontroller",
 				"app\\Http\\Controllers\\Auth\\AuthController.php"
 			],
 			[
 				"rou",
 				"app\\Http\\routes.php"
-			],
-			[
-				"lara",
-				"storage\\logs\\laravel.log"
 			],
 			[
 				"container",
@@ -323,10 +689,6 @@
 				"vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php"
 			],
 			[
-				"userdata",
-				"app\\app\\Models\\UserDataModel.php"
-			],
-			[
 				"compos",
 				"composer.json"
 			],
@@ -345,10 +707,6 @@
 			[
 				"authro",
 				"vendor\\lucadegasperi\\oauth2-server-laravel\\src\\Authorizer.php"
-			],
-			[
-				"exce",
-				"vendor\\league\\flysystem\\src\\Exception.php"
 			],
 			[
 				"passwordgrant",

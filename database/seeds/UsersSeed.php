@@ -38,6 +38,7 @@ class UsersSeed extends Seeder
             'nationality' => array_rand(['ALB','TUR','ENG']), 
             'address' => $faker->streetName .' '. $faker->streetAddress  ,
             'city' => $faker->city,
+            'country_code' => 'KS',
             'enrollment_source_code' => 'ANDROID_APP', 
            // 'referring_member_id' => XXXXXXX, 
             'member_type' => 'IN', 

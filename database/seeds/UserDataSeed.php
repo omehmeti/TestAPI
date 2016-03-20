@@ -20,10 +20,10 @@ class UserDataSeed extends Seeder
         UserDataModel::create ([ 
             'name' => $faker->name,
             'surname' => $faker->lastName, 
-            'birthdate' => $faker->dateTimeThisCentury->format('Y-m-d'), 
+            'birthdate' => $faker->dateTimeThisCentury->format('d/m/Y'), 
             'email' => $faker->email, 
             'gender' => array_rand(['M','F','O']), 
-            'start_date' =>  $faker->dateTimeThisCentury->format('Y-m-d'), 
+            'start_date' =>  $faker->dateTimeThisCentury->format('d/m/Y'), 
             'status' => array_rand(['AC','CX','DL']), 
             'communication_language' => array_rand(['ALB','TUR','ENG']), 
             'nationality' => array_rand(['ALB','TUR','ENG']), 

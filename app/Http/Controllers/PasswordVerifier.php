@@ -11,11 +11,13 @@ use Auth;
 use Illuminate\Support\Facades\Hash;
 class PasswordVerifier extends Controller
 {
-    public function verify($username, $password)
+    public function verify($input, $password)
     {
-    /*	$credentials = 
+
+    	$field = filter_var($input,FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+    	$credentials = 
     	[
-    		'email' => $username,
+    		$field => $input,
     		'password' => $password,
     	];
     
@@ -24,10 +26,10 @@ class PasswordVerifier extends Controller
     }
 
     return false;
-    */
+    
     //Checking if exists user by email or username
 
-    $user = User::where('email', $username)->orWhere('username', $username)->first();
+    /*$user = User::where('email', $username)->orWhere('username', $username)->first();
 
     if($user)
 
@@ -49,9 +51,10 @@ class PasswordVerifier extends Controller
 
     }
 
+
     //If does not exists return false
 
-    return false;
+    return false;*/
     }
 
 
