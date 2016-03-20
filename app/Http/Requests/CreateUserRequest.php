@@ -40,7 +40,7 @@ class CreateUserRequest extends Request
             'enrollment_source_code' => 'required|max:20|exists:enrollment_bonus,source_code', 
             'referring_member_id' => 'max:50', 
             'member_type' => 'in:IN,CO,CH', //IN: Individual, CO: Company or Corporate, CH: Charity or NGO  
-            'username' => '|unique:users,username', 
+            'username' => 'unique:users,username', 
             'consent_email' => 'in:T,F', // T: True, F: False 
             'consent_sms' => 'in:T,F', // T: True, F: False 
             'place_of_birth' => 'alpha'

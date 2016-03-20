@@ -28,23 +28,16 @@ class UserDataController extends Controller
     }
 
     public function store(CreateUserRequest $request){
-        //return response()->json(['message'=>'TEST: '.date("d/m/Y", strtotime($request->birthdate))],200);
         
         DB::transaction(function($request) use ($request)
         {
 
-            $user_request = $request->only(['email','username','password']);
             $users = User::create([
                                 'email'=> $request->email,
                                 'username' => $request->username,
                                 'password' => HASH::make($request->password)   
                                 ]); 
-            //DB::table('users')->create();
-             //return response()->json(['message'=>"User id =  $users->user_id"],201);
-
-            //$user_data = $request->except(['email','username','password']);
-           
-
+            
             UserDataModel::create ([  'user_id' => $users->id,
                                 'name' =>$request->name,
                                 'surname' => $request->surname, 
@@ -66,24 +59,19 @@ class UserDataController extends Controller
                                 'referring_member_id' => $request->referring_member_id,
                                 'nick_name'=>$request->nick_name
                                 ]); 
-            //UserDataModel::create($user_data);
-            //DB::table('user_data')->delete();
+            
         });
        
         return response()->json(['message'=>"Account has been create successfully. Please login now."],201);
     }
 
-    public function show($id,$vehicleID){
-    	$makers = Maker::find($id);
-        if(!$makers){
-            return response()->json(['message'=>'There is not any data associated with this maker ID','code'=>404],404);
+    public function show($user_id){
+    	$user = UserDataModel::find($user_id);
+        if(!$user){
+            return response()->json(['message'=>'There is not any data associated with this User ID','code'=>404],404);
         }else{
-            $vehicle = $makers->vehicles->find($vehicleID);
-
-            if(!$vehicle){
-                return response()->json(['message'=>'There is not any Vehicle associated with that ID','code'=>404],404);
-             }
-            return response()->json(['data'=> $vehicle],200); //this brings all vehicles associated with Makers :)
+            
+            return response()->json(['data'=> $user],200); //this brings all vehicles associated with Makers :)
         }
     }
 

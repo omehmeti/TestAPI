@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"username"
+			],
+			[
+				"requ",
+				"required"
+			],
+			[
+				"consent",
+				"consent_sms"
+			],
+			[
+				"addre",
+				"address"
+			],
+			[
+				"nat",
+				"nationality"
+			],
+			[
 				"fie",
 				"$field〔variable〕"
 			],
@@ -36,66 +56,10 @@
 	"buffers":
 	[
 		{
-			"file": "app/Http/Requests/CreateUserRequest.php",
-			"settings":
-			{
-				"buffer_size": 1676,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "database/migrations/2014_04_24_110151_create_oauth_scopes_table.php",
-			"settings":
-			{
-				"buffer_size": 1012,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2016_02_20_065413_country_table.php",
-			"settings":
-			{
-				"buffer_size": 589,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/seeds/UsersSeed.php",
-			"settings":
-			{
-				"buffer_size": 1688,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "database/seeds/DatabaseSeeder.php",
-			"settings":
-			{
-				"buffer_size": 1072,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/routes.php",
-			"settings":
-			{
-				"buffer_size": 1598,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/Http/Controllers/UserDataController.php",
 			"settings":
 			{
-				"buffer_size": 3237,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/PasswordVerifier.php",
-			"settings":
-			{
-				"buffer_size": 1033,
+				"buffer_size": 4976,
 				"line_ending": "Unix"
 			}
 		},
@@ -104,6 +68,30 @@
 			"settings":
 			{
 				"buffer_size": 1471,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "storage/logs/laravel.log",
+			"settings":
+			{
+				"buffer_size": 13076,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Models/UserDataModel.php",
+			"settings":
+			{
+				"buffer_size": 611,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Requests/CreateUserRequest.php",
+			"settings":
+			{
+				"buffer_size": 1918,
 				"line_ending": "Windows"
 			}
 		}
@@ -150,30 +138,37 @@
 		"/C/xampp/htdocs/PikaCardAPI/app",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests",
 		"/C/xampp/htdocs/PikaCardAPI/app/Models",
+		"/C/xampp/htdocs/PikaCardAPI/database",
 		"/C/xampp/htdocs/PikaCardAPI/database/seeds"
 	],
 	"file_history":
 	[
-		"/C/xampp/htdocs/PikaCardAPI/vendor/league/flysystem/src/Exception.php",
+		"/C/xampp/htdocs/PikaCardAPI/storage/logs/laravel.log",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/PasswordVerifier.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/UsersSeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/routes.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateUserRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Models/UserDataModel.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/symfony/routing/Route.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/UserDataSeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateVehicleRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2014_04_24_110151_create_oauth_scopes_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_20_065413_country_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/league/flysystem/src/Exception.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MakerVehiclesController.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/UserDataController.php",
-		"/C/xampp/htdocs/PikaCardAPI/storage/logs/laravel.log",
-		"/C/xampp/htdocs/PikaCardAPI/database/seeds/UsersSeed.php",
 		"/C/xampp/htdocs/PikaCardAPI/config/app.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/AuthHandler.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/Auth/AuthController.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/User.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/routes.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_04_21_162556_user_data_model_table.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Models/UserDataModel.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_14_080210_create_users.php",
 		"/C/xampp/htdocs/PikaCardAPI/config/oauth2.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/seeds/DatabaseSeeder.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Models/CountryModel.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/seeds/UserDataSeed.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/seeds/VehiclesSeed.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/mockery/mockery/library/Mockery/Container.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/CountryController.php",
@@ -186,7 +181,6 @@
 		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_28_000507_enrollment_bonus_table.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/seeds/EnrollmentBonusSeed.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/composer/autoload_classmap.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_20_065413_country_table.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MakerController.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_21_162556_user_data_model_table.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/seeds/CountrySeed.php",
@@ -212,7 +206,6 @@
 		"/C/xampp/htdocs/PikaCardAPI/.env",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MyController.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Auth/Middleware/AuthenticateWithBasicAuth.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateVehicleRequest.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/Request.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_13_120132_vehicles_table.php",
@@ -228,7 +221,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -243,6 +236,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"communication_language",
+			"start_date",
+			"country",
+			".",
+			"'",
+			"Hash::",
+			"CreateUserRequest",
 			"Hash::",
 			"verify",
 			"->authenticate",
@@ -301,6 +301,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"->",
+			"",
 			"enrollment_bonus",
 			"enrollment_bonuses",
 			"$source_code",
@@ -319,24 +321,24 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Http/Requests/CreateUserRequest.php",
+					"file": "app/Http/Controllers/UserDataController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1676,
+						"buffer_size": 4976,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								856,
-								864
+								372,
+								377
 							]
 						],
 						"settings":
@@ -347,87 +349,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 90.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "database/migrations/2014_04_24_110151_create_oauth_scopes_table.php",
-					"semi_transient": false,
+					"file": "database/seeds/UserDataSeed.php",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1012,
+						"buffer_size": 1471,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								668,
-								680
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "database/migrations/2016_02_20_065413_country_table.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 589,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								589,
-								589
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "database/seeds/UsersSeed.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1688,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1532,
-								1532
+								502,
+								521
 							]
 						],
 						"settings":
@@ -444,101 +386,12 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "database/seeds/DatabaseSeeder.php",
+					"buffer": 2,
+					"file": "storage/logs/laravel.log",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1072,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								299,
-								299
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/Http/routes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1598,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1312,
-								1318
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/Http/Controllers/UserDataController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3237,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								291,
-								318
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/Http/Controllers/PasswordVerifier.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1033,
+						"buffer_size": 13076,
 						"regions":
 						{
 						},
@@ -551,32 +404,59 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "database/seeds/UserDataSeed.php",
+					"buffer": 3,
+					"file": "app/Models/UserDataModel.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1471,
+						"buffer_size": 611,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								704,
-								704
+								537,
+								537
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/Http/Requests/CreateUserRequest.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1918,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1401,
+								1401
 							]
 						],
 						"settings":
@@ -590,7 +470,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -635,7 +515,7 @@
 	"project": "PikaCardAPI.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -644,6 +524,30 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"lara",
+				"storage\\logs\\laravel.log"
+			],
+			[
+				"larave",
+				"storage\\logs\\laravel.log"
+			],
+			[
+				"route.php",
+				"vendor\\symfony\\routing\\Route.php"
+			],
+			[
+				"route",
+				"app\\Http\\routes.php"
+			],
+			[
+				"userdatase",
+				"database\\seeds\\UserDataSeed.php"
+			],
+			[
+				"createvehiclerequest",
+				"app\\Http\\Requests\\CreateVehicleRequest.php"
+			],
 			[
 				"exce",
 				"vendor\\league\\flysystem\\src\\Exception.php"
@@ -655,10 +559,6 @@
 			[
 				"userdata",
 				"database\\seeds\\UserDataSeed.php"
-			],
-			[
-				"lara",
-				"storage\\logs\\laravel.log"
 			],
 			[
 				"oauthcontroller",
@@ -673,16 +573,8 @@
 				"vendor\\mockery\\mockery\\library\\Mockery\\Container.php"
 			],
 			[
-				"route",
-				"app\\Http\\routes.php"
-			],
-			[
 				"resourceserver",
 				"vendor\\league\\oauth2-server\\src\\ResourceServer.php"
-			],
-			[
-				"larave",
-				"storage\\logs\\laravel.log"
 			],
 			[
 				"migrate",
