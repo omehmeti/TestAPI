@@ -28,7 +28,7 @@ class CreateUserRequest extends Request
             'surname' => 'required|alpha|max:50', 
             'birthdate' => 'required|date_format:d/m/Y', 
             'email' => 'required|email|max:255|unique:users,email',
-            'password' => 'required|max:60', 
+            'password' => 'required|confirmed|max:60', 
             'gender' => 'required|in:M,F,O|max:1', 
             'start_date' =>  'required|date_format:d/m/Y', 
             'status' => 'required|in:AC,CX,DL', 
@@ -43,7 +43,8 @@ class CreateUserRequest extends Request
             'username' => 'unique:users,username', 
             'consent_email' => 'in:T,F', // T: True, F: False 
             'consent_sms' => 'in:T,F', // T: True, F: False 
-            'place_of_birth' => 'alpha'
+            'place_of_birth' => 'alpha',
+            'marital_status' => 'in:single,in_a_relationship,engaged,married,it_is_complicated,long_distance,widowed,separated,divorced'
 
 
 

@@ -22,7 +22,8 @@ class PasswordVerifier extends Controller
     	];
     
     if(Auth::once($credentials)){
-    	return Auth::user()->id;
+    	//TODO: Add control for CX and DL statuses so they can not login
+        return Auth::user()->id;
     }
 
     return false;

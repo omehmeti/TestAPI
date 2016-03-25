@@ -2,13 +2,13 @@
 --- User Operations: ---
 ------------------------
 
-1. Register New User
-2. Update User Profile
-3. Delete User
-4. Login User
+1. Register New User (OK)
+2. Update User Profile (OK)
+3. Delete User (OK)
+4. Login User (OK)
 5. Reset Password
-6. View User
-7. View Users
+6. View User (OK)
+7. View Users (OK)
 
 -----------------------
 --- Welcome Points: ---

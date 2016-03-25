@@ -39,7 +39,8 @@ Route::group(array('prefix' => 'api/v1.0'), function () {
 	Route::resource('countries','CountryController');
 	Route::resource('enrollment_bonuses','EnrollmentBonusController');
 	Route::resource('users','User');
-	Route::resource('user_data','UserDataController');
+	Route::resource('user_data','UserDataController',['except' => ['index'] ]); //Dont allow showing all users
+	Route::resource('user_data/reset_password','UserDataController@reset_password');
 
 	Route::post('oauth/access_token',function(){
 		return response()->json(Authorizer::issueAccessToken());

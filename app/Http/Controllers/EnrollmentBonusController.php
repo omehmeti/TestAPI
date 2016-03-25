@@ -73,8 +73,6 @@ class EnrollmentBonusController extends Controller
         $bonus_points = $request->get('bonus_points');
         $referer_bonus_points = $request->get('referer_bonus_points');
 
-       
-        
         $enrollment_bonus->name = $name;
         $enrollment_bonus->start_date = Carbon::createFromFormat('d.m.Y', $start_date);
         $enrollment_bonus->end_date = Carbon::createFromFormat('d.m.Y', $end_date);
