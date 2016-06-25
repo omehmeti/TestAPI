@@ -6,7 +6,7 @@
 2. Update User Profile (OK)
 3. Delete User (OK)
 4. Login User (OK)
-5. Reset Password
+5. Reset Password (OK)
 6. View User (OK)
 7. View Users (OK)
 
@@ -21,24 +21,43 @@
 --- Partner Operations: ---
 ---------------------------
 
-1. Register New Partner
-2. Update Partner Data
-3. Delete Partner
-4. View Partner
-5. View Partners
+1. Register New Partner (OK)
+2. Update Partner Data (OK)
+3. Delete Partner (OK)
+4. View Partner (OK)
+5. View Partners (OK)
 6. Partner Points Win Rules
 7. Partner Points Spend Rules
+8. Partner Branches latitude,longitude 42.457983, 21.466536
+
+9. Partner Products:
+	a) Partner_code
+	b) Partner_activity_classification
+	c) Product_title
+	d) Product_desctiption
+	e) Product_price
+	f) Product_sale_price
+	y) Product_is_in_promotion
+	z) Product_promotion_until_date
+	x) Product_points_to_win
+	g) Product_image
+	i) Product_category
+	j) Product_subcategory
+	k) Product_is_active
+	 
 
 ----------------------------
 --- Activity Operations: ---
 ----------------------------
 
-1. Insert Activity
-2. Update Activity
-3. Delete Activity
-4. List all activities
-5. List single partner activity
-6. List single user activity
+1. Insert Activity (OK)
+2. Update Activity (OK)
+3. Delete Activity (OK)
+4. List all activities (OK)
+5. List single partner activity (OK)
+6. List single user activity (OK)
+7. Check for duplicate activity before insert and update
+8. Check for partner bonus rules to calculate the points
 
 -------------------------------
 --- Redeemption Operations: ---
@@ -56,3 +75,21 @@
 ----------------------
 1. Insert notifications
 2. Send Notifications
+
+-----------------------
+--- Member Balances ---
+-----------------------
+
+1. Member balances
+
+-----------------
+--- Dashboard ---
+-----------------
+
+Badges Earned
+Total Points
+Total Points since enrollment
+Last 3 Activities (OK)
+Last 3 Awards (OK)
+Promotions
+Products

@@ -1,0 +1,382 @@
+-- Create table
+create table MEMBER_AWD
+(
+  id                         NUMBER not null,
+  flyer_id                   VARCHAR2(16 CHAR) not null,
+  awd_code                   VARCHAR2(10 CHAR) not null,
+  definition                 VARCHAR2(255 CHAR),
+  claim_date                 DATE,
+  issue_date                 DATE,
+  miles                      NUMBER,
+  status                     VARCHAR2(2 CHAR),
+  cut_date                   DATE,
+  flyer_card_type            VARCHAR2(5 CHAR),
+  printed                    CHAR(1 CHAR),
+  ticketnumber               VARCHAR2(15 CHAR),
+  awardusagetype             CHAR(1 CHAR),
+  username                   VARCHAR2(20 CHAR),
+  flight_date                DATE,
+  class_code                 CHAR(1 CHAR),
+  origin                     VARCHAR2(10 CHAR),
+  destination                VARCHAR2(10 CHAR),
+  flight_number              VARCHAR2(10 CHAR),
+  ret_flight_date            DATE,
+  ret_flight_number          VARCHAR2(10 CHAR),
+  ret_class_code             CHAR(1 CHAR),
+  ret_origin                 VARCHAR2(10 CHAR),
+  ret_destination            VARCHAR2(10 CHAR),
+  ret_ticketnumber           VARCHAR2(15 CHAR),
+  explanation                VARCHAR2(255 CHAR),
+  company                    VARCHAR2(10 CHAR),
+  flt_company                VARCHAR2(10 CHAR),
+  ret_flt_company            VARCHAR2(10 CHAR),
+  step3_company              VARCHAR2(10 CHAR),
+  step3_flight_date          DATE,
+  step3_flight_number        VARCHAR2(10 CHAR),
+  step3_class_code           VARCHAR2(1 CHAR),
+  step3_origin               VARCHAR2(10 CHAR),
+  step3_destination          VARCHAR2(10 CHAR),
+  step3_ticket_number        VARCHAR2(15 CHAR),
+  step4_company              VARCHAR2(10 CHAR),
+  step4_flight_date          DATE,
+  step4_flight_number        VARCHAR2(10 CHAR),
+  step4_class_code           VARCHAR2(1 CHAR),
+  step4_origin               VARCHAR2(10 CHAR),
+  step4_destination          VARCHAR2(10 CHAR),
+  step4_ticket_number        VARCHAR2(15 CHAR),
+  step5_company              VARCHAR2(10 CHAR),
+  step5_flight_date          DATE,
+  step5_flight_number        VARCHAR2(10 CHAR),
+  step5_class_code           VARCHAR2(1 CHAR),
+  step5_origin               VARCHAR2(10 CHAR),
+  step5_destination          VARCHAR2(10 CHAR),
+  step5_ticket_number        VARCHAR2(15 CHAR),
+  step6_company              VARCHAR2(10 CHAR),
+  step6_flight_date          DATE,
+  step6_flight_number        VARCHAR2(10 CHAR),
+  step6_class_code           VARCHAR2(1 CHAR),
+  step6_origin               VARCHAR2(10 CHAR),
+  step6_destination          VARCHAR2(10 CHAR),
+  step6_ticket_number        VARCHAR2(15 CHAR),
+  step7_company              VARCHAR2(10 CHAR),
+  step7_flight_date          DATE,
+  step7_flight_number        VARCHAR2(10 CHAR),
+  step7_class_code           VARCHAR2(1 CHAR),
+  step7_origin               VARCHAR2(10 CHAR),
+  step7_destination          VARCHAR2(10 CHAR),
+  step7_ticket_number        VARCHAR2(15 CHAR),
+  step8_company              VARCHAR2(10 CHAR),
+  step8_flight_date          DATE,
+  step8_flight_number        VARCHAR2(10 CHAR),
+  step8_class_code           VARCHAR2(1 CHAR),
+  step8_origin               VARCHAR2(10 CHAR),
+  step8_destination          VARCHAR2(10 CHAR),
+  step8_ticket_number        VARCHAR2(15 CHAR),
+  entry_type                 VARCHAR2(1 CHAR),
+  partner_reservation_number VARCHAR2(50 CHAR),
+  certificate_explanation    VARCHAR2(2000 CHAR),
+  checkin_date               DATE,
+  checkout_date              DATE,
+  partner_branch_name        VARCHAR2(50 CHAR),
+  valid_until                DATE,
+  issue_count                NUMBER,
+  partner_branch_expl        VARCHAR2(255 CHAR),
+  finance_transaction_seq    NUMBER,
+  issue_count_child          NUMBER,
+  issue_count_infant         NUMBER,
+  service_charge             NUMBER,
+  number_of_days             NUMBER,
+  redeposited_points         NUMBER,
+  accounting_seq             NUMBER,
+  accounting_redeposit_seq   NUMBER,
+  pnr                        VARCHAR2(6 CHAR),
+  client_unique_identifier   VARCHAR2(50 CHAR),
+  rta_serial                 VARCHAR2(10 CHAR),
+  redemption_channel         VARCHAR2(10 CHAR),
+  cancel_reason_code         NUMBER,
+  invoiced                   VARCHAR2(1 CHAR),
+  invoiced_date              DATE,
+  inserted_by                VARCHAR2(20 CHAR),
+  insert_date                DATE,
+  amended_by                 VARCHAR2(20 CHAR),
+  amend_date                 DATE,
+  ref_act_seq                NUMBER,
+  fee_awd_seq                NUMBER,
+  issuing_city_code          VARCHAR2(3 CHAR),
+  issuing_agent_initials     VARCHAR2(2 CHAR),
+  award_credit               NUMBER,
+  redeposited_award_credit   NUMBER,
+  cash_amount                NUMBER,
+  hotel_service_type         VARCHAR2(10 CHAR),
+  car_class_type             VARCHAR2(10 CHAR),
+  migration_reference        VARCHAR2(20),
+  issuing_office_id          VARCHAR2(30),
+  fare_basis                 VARCHAR2(6),
+  process_status             VARCHAR2(10),
+  booking_date               DATE,
+  issue_date_time            DATE,
+  acc_no                     VARCHAR2(16 CHAR),
+  promotion_code             VARCHAR2(10),
+  ret_promotion_code         VARCHAR2(10),
+  step3_promotion_code       VARCHAR2(10),
+  step4_promotion_code       VARCHAR2(10),
+  step5_promotion_code       VARCHAR2(10),
+  step6_promotion_code       VARCHAR2(10),
+  step7_promotion_code       VARCHAR2(10),
+  step8_promotion_code       VARCHAR2(10)
+)
+tablespace CRANE_PC_DATA
+  pctfree 20
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 5M
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table MEMBER_AWD
+  is 'AWARDS USED BY MEMBERS';
+-- Add comments to the columns 
+comment on column MEMBER_AWD.id
+  is 'PK OF THE TABLE';
+comment on column MEMBER_AWD.flyer_id
+  is 'MEMBER ID THAT USED THE AWARD';
+comment on column MEMBER_AWD.awd_code
+  is 'AWARD CODE. FK FROM AWARDSDEF';
+comment on column MEMBER_AWD.definition
+  is 'FREE TEXT DEFINITION. DISPLAYED ON STATEMENTS.';
+comment on column MEMBER_AWD.claim_date
+  is 'IF AWARD IS NOT REDEPOSITED, THEN NULL. IF REDEPOSITED, THEN REDEPOSIT DATE.';
+comment on column MEMBER_AWD.issue_date
+  is 'AWARD ISSUE DATE';
+comment on column MEMBER_AWD.miles
+  is 'AWARD MILES USED IN REDEMPTION (ALWAYS NEGATIVE)';
+comment on column MEMBER_AWD.status
+  is 'ST=STATEMENTED. OTHERWISE NOT STATEMENTED';
+comment on column MEMBER_AWD.cut_date
+  is 'STATEMENT CUT DATE FOR THIS AWARD';
+comment on column MEMBER_AWD.flyer_card_type
+  is 'FLYER CARD TYPE WHEN AWARD IS USED. FK FROM FLYER_CARDS_DEF';
+comment on column MEMBER_AWD.printed
+  is 'TO BE USED BY MH';
+comment on column MEMBER_AWD.ticketnumber
+  is 'TICKET NO';
+comment on column MEMBER_AWD.awardusagetype
+  is 'E:ECONOMY B:BUSINESS F:FIRST CLASS FREE TICKET. M:UPGRADETO BUSINESS N: UPGRADE TO FIRST P:SERVICE AWARD X: EXPIRE';
+comment on column MEMBER_AWD.username
+  is 'AGENT THAT ISSUED THAT AWARD';
+comment on column MEMBER_AWD.flight_date
+  is 'FLT DATE 1ST STEP';
+comment on column MEMBER_AWD.class_code
+  is 'FLT CLASS 1ST STEP';
+comment on column MEMBER_AWD.origin
+  is 'ORG 1ST STEP';
+comment on column MEMBER_AWD.destination
+  is 'DEST 1ST STEP';
+comment on column MEMBER_AWD.flight_number
+  is 'FLT NO 1ST STEP';
+comment on column MEMBER_AWD.ret_flight_date
+  is 'FLT DATE 2ND STEP';
+comment on column MEMBER_AWD.ret_flight_number
+  is 'FLT NO 2ND STEP';
+comment on column MEMBER_AWD.ret_class_code
+  is 'FLT CLASS 2ND STEP';
+comment on column MEMBER_AWD.ret_origin
+  is 'ORG 2ND STEP';
+comment on column MEMBER_AWD.ret_destination
+  is 'DEST 2ND STEP';
+comment on column MEMBER_AWD.ret_ticketnumber
+  is 'UNUSED restored but review needed Ozkan';
+comment on column MEMBER_AWD.explanation
+  is 'INTERNAL USE ONLY FREE TEXT EXPLANATION';
+comment on column MEMBER_AWD.company
+  is 'THE COMPANY OF THE WHOLE AWARD';
+comment on column MEMBER_AWD.flt_company
+  is 'COMPANY 1ST STEP';
+comment on column MEMBER_AWD.ret_flt_company
+  is 'COMPANY 2ND STEP';
+comment on column MEMBER_AWD.step3_company
+  is 'COMPANY 3RD STEP';
+comment on column MEMBER_AWD.step3_flight_date
+  is 'STEP3_FLIGHT_DATE';
+comment on column MEMBER_AWD.step3_flight_number
+  is 'STEP3_FLIGHT_NUMBER';
+comment on column MEMBER_AWD.step3_class_code
+  is 'STEP3_CLASS_CODE';
+comment on column MEMBER_AWD.step3_origin
+  is 'STEP3_ORIGIN';
+comment on column MEMBER_AWD.step3_destination
+  is 'STEP3_DESTINATION';
+comment on column MEMBER_AWD.step3_ticket_number
+  is 'STEP3_TICKET_NUMBER';
+comment on column MEMBER_AWD.step4_company
+  is 'STEP4_COMPANY';
+comment on column MEMBER_AWD.step4_flight_date
+  is 'STEP4_FLIGHT_DATE';
+comment on column MEMBER_AWD.step4_flight_number
+  is 'STEP4_FLIGHT_NUMBER';
+comment on column MEMBER_AWD.step4_class_code
+  is 'STEP4_CLASS_CODE';
+comment on column MEMBER_AWD.step4_origin
+  is 'STEP4_ORIGIN';
+comment on column MEMBER_AWD.step4_destination
+  is 'STEP4_DESTINATION';
+comment on column MEMBER_AWD.step4_ticket_number
+  is 'STEP4_TICKET_NUMBER';
+comment on column MEMBER_AWD.step5_company
+  is 'STEP5_COMPANY';
+comment on column MEMBER_AWD.step5_flight_date
+  is 'STEP5_FLIGHT_DATE';
+comment on column MEMBER_AWD.step5_flight_number
+  is 'STEP5_FLIGHT_NUMBER';
+comment on column MEMBER_AWD.step5_class_code
+  is 'STEP5_CLASS_CODE';
+comment on column MEMBER_AWD.step5_origin
+  is 'STEP5_ORIGIN';
+comment on column MEMBER_AWD.step5_destination
+  is 'STEP5_DESTINATION';
+comment on column MEMBER_AWD.step5_ticket_number
+  is 'STEP5_TICKET_NUMBER';
+comment on column MEMBER_AWD.step6_company
+  is 'STEP6_COMPANY';
+comment on column MEMBER_AWD.step6_flight_date
+  is 'STEP6_FLIGHT_DATE';
+comment on column MEMBER_AWD.step6_flight_number
+  is 'STEP6_FLIGHT_NUMBER';
+comment on column MEMBER_AWD.step6_class_code
+  is 'STEP6_CLASS_CODE';
+comment on column MEMBER_AWD.step6_origin
+  is 'STEP6_ORIGIN';
+comment on column MEMBER_AWD.step6_destination
+  is 'STEP6_DESTINATION';
+comment on column MEMBER_AWD.step6_ticket_number
+  is 'STEP6_TICKET_NUMBER';
+comment on column MEMBER_AWD.step7_company
+  is 'STEP7_COMPANY';
+comment on column MEMBER_AWD.step7_flight_date
+  is 'STEP7_FLIGHT_DATE';
+comment on column MEMBER_AWD.step7_flight_number
+  is 'STEP7_FLIGHT_NUMBER';
+comment on column MEMBER_AWD.step7_class_code
+  is 'STEP7_CLASS_CODE';
+comment on column MEMBER_AWD.step7_origin
+  is 'STEP7_ORIGIN';
+comment on column MEMBER_AWD.step7_destination
+  is 'STEP7_DESTINATION';
+comment on column MEMBER_AWD.step7_ticket_number
+  is 'STEP7_TICKET_NUMBER';
+comment on column MEMBER_AWD.step8_company
+  is 'STEP8_COMPANY';
+comment on column MEMBER_AWD.step8_flight_date
+  is 'STEP8_FLIGHT_DATE';
+comment on column MEMBER_AWD.step8_flight_number
+  is 'STEP8_FLIGHT_NUMBER';
+comment on column MEMBER_AWD.step8_class_code
+  is 'STEP8_CLASS_CODE';
+comment on column MEMBER_AWD.step8_origin
+  is 'STEP8_ORIGIN';
+comment on column MEMBER_AWD.step8_destination
+  is 'STEP8_DESTINATION';
+comment on column MEMBER_AWD.step8_ticket_number
+  is 'STEP8_TICKET_NUMBER';
+comment on column MEMBER_AWD.entry_type
+  is 'A:AUTOMATIC M:MANUAL';
+comment on column MEMBER_AWD.partner_reservation_number
+  is 'DROP. UNUSED Restored by review with Ozkan and Yildiz. It is used while updating a Service Award from RedemptionServiceAwardDetailsPanel';
+comment on column MEMBER_AWD.certificate_explanation
+  is 'EXPLANATION TO BE PRINTED ON CERTIFICATE';
+comment on column MEMBER_AWD.checkin_date
+  is 'IF SERVICE AWARD, THEN CHECKIN DATE TO HOTEL (OR START OF CAR RENTAL)';
+comment on column MEMBER_AWD.checkout_date
+  is 'IF SERVICE AWARD, THEN CHECKOUT DATE TO HOTEL (OR END OF CAR RENTAL)';
+comment on column MEMBER_AWD.partner_branch_name
+  is 'IF SERVICE AWARD, THEN BRANCH (OPTIONAL) OF THE COMPANY THAT AWARD IS USED';
+comment on column MEMBER_AWD.valid_until
+  is 'IF SERVICE AWARD, THEN VALIDITY END DATE';
+comment on column MEMBER_AWD.issue_count
+  is 'NUMBER OF PEOPLE USED THE AWARD';
+comment on column MEMBER_AWD.partner_branch_expl
+  is 'IF SERVICE AWARD, THEN BRANCH (OPTIONAL) EXPLANATION (FREE TEXT)';
+comment on column MEMBER_AWD.finance_transaction_seq
+  is 'FINANCE ACTIVITY SEQUENCE';
+comment on column MEMBER_AWD.issue_count_child
+  is 'NUMBER OF CHILDREN. NOT POPULATED, FIX IT.';
+comment on column MEMBER_AWD.issue_count_infant
+  is 'NUMBER OF INFANT. NOT POPULATED, FIX IT.';
+comment on column MEMBER_AWD.service_charge
+  is 'POPULATE WITH SERVICE CHARGE';
+comment on column MEMBER_AWD.number_of_days
+  is 'IF SERVICE AWARD, THEN NUMBER OF DAYS OF STAY/RENTAL/ETC. = CHECKOUT-CHECKIN DATE';
+comment on column MEMBER_AWD.redeposited_points
+  is 'POINTS REDEPOSITED.FOR EXPIRY REDEMPTIONS , USED TO HOLD THE AMOUNT OF EXTENDED POINTS.';
+comment on column MEMBER_AWD.accounting_seq
+  is 'FK FROM ACCOUNTING_TRANSFER. THE PERIOD THAT THIS AWARD IS ACCOUNTED';
+comment on column MEMBER_AWD.accounting_redeposit_seq
+  is 'FK FROM ACCOUNTING_TRANSFER. THE PERIOD THAT THIS AWARD IS REDEPOSITED AND ACCOUNTED';
+comment on column MEMBER_AWD.pnr
+  is 'PNR';
+comment on column MEMBER_AWD.client_unique_identifier
+  is 'UNIQUE IDENTIFIER OF THIS AWARD ON THE PARTNER SYSTEMS';
+comment on column MEMBER_AWD.rta_serial
+  is 'INTERNAL REDEMPTION TICKET AWARD SERIAL NUMBER';
+comment on column MEMBER_AWD.redemption_channel
+  is 'THE SOURCE OF THE REDEMPTION';
+comment on column MEMBER_AWD.cancel_reason_code
+  is 'AWARD CANCEL REASON CODE';
+comment on column MEMBER_AWD.invoiced
+  is 'FLAG TO DECIDE WHETHER IT IS INVOICED OR NOT NULL: NOT INVOICED YET I:AWARD INVOICED C:AWARD REFUNDED/CLAIMED';
+comment on column MEMBER_AWD.invoiced_date
+  is 'INVOICED DATE';
+comment on column MEMBER_AWD.inserted_by
+  is 'USER WHO INSERTED THE RECORD (AUDITING PURPOSES)';
+comment on column MEMBER_AWD.insert_date
+  is 'INSERT DATE (AUDITING PURPOSES)';
+comment on column MEMBER_AWD.amended_by
+  is 'USER WHO AMENDED THE RECORD (AUDITING PURPOSES)';
+comment on column MEMBER_AWD.amend_date
+  is 'AMEND DATE (AUDITING PURPOSES)';
+comment on column MEMBER_AWD.ref_act_seq
+  is 'IF AWARD IS POINT TRANSFER THEN IT STORES THE TARGET MEMBER ID';
+comment on column MEMBER_AWD.fee_awd_seq
+  is 'IF AWARD IS PINT TRANSFER AND HAS A FEE THEN IS STORES AWARD_SEQ OF FEE RECORD';
+comment on column MEMBER_AWD.issuing_city_code
+  is '(SPECIALLY FOR FLIGHT AWARDS ISSUED ON A CRS/REZ SYSTEM) WHERE THE AWARD IS ISSUED.';
+comment on column MEMBER_AWD.issuing_agent_initials
+  is '(SPECIALLY FOR FLIGHT REDEMPTIONS FROM CRS/REZ SYSTEMS) THE INITIALS OF THE REZ SYSTEM USER';
+comment on column MEMBER_AWD.award_credit
+  is 'NUMBER OF AWARD CREDITS USED FOT THE AWARD ISSUE';
+comment on column MEMBER_AWD.redeposited_award_credit
+  is 'REDEPOSITED AWARD CREDITS';
+comment on column MEMBER_AWD.cash_amount
+  is 'CASH AMOUNT OF THE AWARD';
+comment on column MEMBER_AWD.hotel_service_type
+  is 'HOTEL SERVICE TYPE.USUALLY IS USED TO SPECIFY ROOM TYPE';
+comment on column MEMBER_AWD.car_class_type
+  is 'CAR RENTAL CLASS TYPE.USUALLY IS USED TO SPECIFY CAR MODEL';
+comment on column MEMBER_AWD.migration_reference
+  is 'This column is for holdig reference to migrated data. Never Drop';
+comment on column MEMBER_AWD.issuing_office_id
+  is 'Issuing office id (Agent''s office id)';
+comment on column MEMBER_AWD.fare_basis
+  is 'Fare Basis for Upgrade Redemptions (Original Ticket Fare Basis)';
+comment on column MEMBER_AWD.process_status
+  is 'NULL:NEW RECORD PR:PROCESSING WH:WAITING FOR HANDBACK WE:WAITING FOR EXPORT OK:SUCCESSFUL';
+comment on column MEMBER_AWD.promotion_code
+  is 'Promotion Code From PAX';
+comment on column MEMBER_AWD.ret_promotion_code
+  is 'Promotion Code From PAX';
+comment on column MEMBER_AWD.step3_promotion_code
+  is 'Promotion Code From PAX';
+comment on column MEMBER_AWD.step4_promotion_code
+  is 'Promotion Code From PAX';
+comment on column MEMBER_AWD.step5_promotion_code
+  is 'Promotion Code From PAX';
+comment on column MEMBER_AWD.step6_promotion_code
+  is 'Promotion Code From PAX';
+comment on column MEMBER_AWD.step7_promotion_code
+  is 'Promotion Code From PAX';
+comment on column MEMBER_AWD.step8_promotion_code
+  is 'Promotion Code From PAX';

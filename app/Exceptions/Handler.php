@@ -50,8 +50,10 @@ class Handler extends ExceptionHandler
             return response()->json(['message'=>'Bad request.Please verify your request route.','code'=>400],400);
         }
         else if ( $e instanceof InvalidRequestException ){
-            return response()->json(['message'=>'TEST','code'=>400],400);
+            return response()->json(['message'=>'Invalid Request','code'=>400],400);
 
+        }else if ( $e instanceof MethodNotAllowedHttpException ){
+            return response()->json(['message'=>'This method is not allowed here','code'=>400],400);
         }
         else if ( !($e->getMessage() == '') ){
             return response()->json(['message'=>$e->getMessage(),'code'=>400],400);

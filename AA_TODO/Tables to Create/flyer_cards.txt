@@ -1,0 +1,16 @@
+-- Create table
+create table FLYER_CARDS
+(
+  id                           VARCHAR2(16 CHAR) not null,
+  type                         VARCHAR2(5 CHAR) not null,
+  owner                        VARCHAR2(16 CHAR) not null,
+  issue_date                   DATE,
+  expire_date                  DATE,
+  parent                       VARCHAR2(16 CHAR),
+  use_parent                   VARCHAR2(3 CHAR),
+  total_miles                  NUMBER,
+  total_miles_since_enrolment  NUMBER,
+  spouse_id                    VARCHAR2(16 CHAR),
+  expire_date_on_card          DATE,
+  card_in_progress             VARCHAR2(5 CHAR),
+  card_in_progress_switch_date DATE,

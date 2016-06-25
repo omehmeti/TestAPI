@@ -38,15 +38,30 @@ Route::group(array('prefix' => 'api/v1.0'), function () {
 	Route::resource('makers.vehicles','MakerVehiclesController',['except' => ['edit','create'] ]); 
 	Route::resource('countries','CountryController');
 	Route::resource('enrollment_bonuses','EnrollmentBonusController');
-	Route::resource('users','User');
-	Route::resource('user_data','UserDataController',['except' => ['index'] ]); //Dont allow showing all users
-	Route::resource('user_data/reset_password','UserDataController@reset_password');
+	Route::resource('partner','PartnerController');
+	
+	Route::post('user_data/reset_password', 'UserDataController@reset_password',['only' => ['reset_password'] ]);
+	Route::resource('user_data','UserDataController',['except' => ['index'] ] );
+	
+
+	Route::resource('activity','ActivityController',['except' => ['index','show'] ]); 
+	Route::get('activity/get_activity/{activity_seq_id?}{user_id?}{partner_code?}', 'ActivityController@get_activity',['only' => ['index','show'] ]);
+	
+	Route::get('member_awards/get_member_award/{member_award_seq_id?}{user_id?}{partner_code?}', 'MemberAwardsController@get_member_award',['only' => ['index','show'] ]);
+
+	Route::resource('member_awards','MemberAwardsController',['except' => ['index','show'] ]); 
+	
+
+
+	Route::resource('member_cards','MemberCardsController',['except' => ['store'] ]); 
+
 
 	Route::post('oauth/access_token',function(){
 		return response()->json(Authorizer::issueAccessToken());
-	});
+	});	
 
 	}
 
 
 );
+

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\DeleteUserRequest;
+use App\Http\Requests\ResetPasswordRequest;
 use Illuminate\Support\Facades\Cache; //Added for cache support of requests
 use app\Http\Controllers;
 use App\User;
@@ -16,12 +17,11 @@ use Mail;
 class UserDataController extends Controller
 {
     public function __construct(){
-       $this->middleware('oauth',['except'=>['store']]);
+       $this->middleware('oauth',['except'=>['store','reset_password']]);
     }
 
-    //TO DO: // Create the function
     public function index(){
-    	$users = Cache::remember('user',60,function(){
+    	    $users = Cache::remember('user',60,function(){
             return User::simplePaginate(15);
         });
 
@@ -35,11 +35,13 @@ class UserDataController extends Controller
 
             $users = User::create([
                                 'email'=> $request->email,
+                                'phone_number' =>$request->phone_number,
                                 'username' => $request->username,
                                 'password' => HASH::make($request->password)   
                                 ]); 
             
-            UserDataModel::create ([  'user_id' => $users->id,
+            if($users) {
+                $user_data = UserDataModel::create ([  'user_id' => $users->id,
                                 'name' =>$request->name,
                                 'surname' => $request->surname, 
                                 'birthdate' =>  Carbon::createFromFormat('d/m/Y', $request->birthdate ),                            
@@ -60,7 +62,21 @@ class UserDataController extends Controller
                                 'marital_status' => $request->marital_status,
                                 'referring_member_id' => $request->referring_member_id,
                                 'nick_name'=>$request->nick_name
-                                ]); 
+                                ]);
+                if($user_data){
+                    /*Mail::send('emails.welcome', ['user' => $users,'user_data'=>$user_data], function ($message) use ($users) {
+                        $message->from('noreply@pikacard.com', 'Pikacard');
+
+                        $message->to($users->email, $users->username)->subject('Pikacard - Welcome to Pikacard');
+
+                    });
+                    */
+                }else{
+                    return response()->json(['message'=>'There was a problem creating your user. Please contact our free phone support at 080001000 or write us direct to register@pikacard.com','code'=>404],404);
+                }
+            }else{
+                 return response()->json(['message'=>'There was a problem creating your user. Please contact our free phone support at 080001000 or write us direct to register@pikacard.com','code'=>404],404);
+            }                 
             
         });
        
@@ -68,12 +84,18 @@ class UserDataController extends Controller
     }
 
     public function show($user_id){
-    	$user = UserDataModel::find($user_id);
-        if(!$user){
+
+        $user = DB::table('users')
+            ->join('user_data', 'users.id', '=', 'user_data.user_id')
+            ->where('users.id', '=', $user_id)
+            ->select('users.email','users.username', 'users.phone_number', 'user_data.*')
+            ->get();
+
+    	if(!$user){
             return response()->json(['message'=>'There is not any data associated with this User ID','code'=>404],404);
         }else{
             
-            return response()->json(['data'=> $user],200); //this brings all vehicles associated with Makers :)
+            return response()->json(['data'=> $user],200);
         }
     }
 
@@ -158,19 +180,23 @@ class UserDataController extends Controller
     }
 
 
-    public function reset_password( $input ){
-        if( !$input ){
-            return response()->json(['message'=>'Email or username can not be empty.','code'=>404],404);
+    public function reset_password( ResetPasswordRequest $request){
+        
+        if( !$request->phone_number ){
+            return response()->json(['message'=>'Phone number can not be empty.','code'=>404],404);
         }
-
-        $field = filter_var($input,FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        $field = filter_var( $request->phone_number,FILTER_VALIDATE_FLOAT) ? 'phone_number' : '';
+        //$field = filter_var($input,FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
         $user ='';
-        if( $field == 'email'){
+        if( $field == 'phone_number'){
+            $user = User::where('phone_number', $request->phone_number)->first();
+        }
+        /*if( $field == 'email'){
             $user = User::where('email', $input)->first();
         }else{
             $user = User::where('username', $input)->first();
         }
-
+        */
         if( $user ){
 
             // Generate temporary password
@@ -212,11 +238,8 @@ class UserDataController extends Controller
                 return response()->json(['message'=>'There was a problem reseting your password. Please try again or contact our contact center at 080001000.','code'=>404],404);
             }
         }else{
-            return response()->json(['message'=>'The username or email that you provided is not registered in our system. Please check and verify it.','code'=>404],404);
+            return response()->json(['message'=>'The phone number that you provided is not registered in our system. Please check and verify it.','code'=>404],404);
         }
-
-
-    
     }
 
 }

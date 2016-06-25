@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"requests"
+			],
+			[
+				"reset",
+				"reset_password"
+			],
+			[
+				"Reset",
+				"ResetPasswordRequest"
+			],
+			[
+				"phone",
+				"phone_number"
+			],
+			[
+				"activit",
+				"activity_seq_id"
+			],
+			[
+				"alp",
+				"alpha|max:50"
+			],
+			[
+				"do",
+				"double"
+			],
+			[
+				"activity_",
+				"activity_type"
+			],
+			[
+				"contac",
+				"contact_phone"
+			],
+			[
 				"sta",
 				"$status〔variable〕"
 			],
@@ -59,6 +95,54 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "AA_TODO/TODO.txt",
+			"settings":
+			{
+				"buffer_size": 2019,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/MemberAwardsController.php",
+			"settings":
+			{
+				"buffer_size": 5824,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database/migrations/2016_05_06_202231_activity_table.php",
+			"settings":
+			{
+				"buffer_size": 1896,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database/migrations/2016_06_09_200250_member_awards_table.php",
+			"settings":
+			{
+				"buffer_size": 1910,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database/migrations/2016_02_20_065413_country_table.php",
+			"settings":
+			{
+				"buffer_size": 1257,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database/migrations/2016_02_28_000507_enrollment_bonus_table.php",
+			"settings":
+			{
+				"buffer_size": 914,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -99,58 +183,107 @@
 	[
 		"/C/xampp/htdocs/PikaCardAPI",
 		"/C/xampp/htdocs/PikaCardAPI/AA_TODO",
-		"/C/xampp/htdocs/PikaCardAPI/AA_TODO/Tables to Create",
 		"/C/xampp/htdocs/PikaCardAPI/app",
-		"/C/xampp/htdocs/PikaCardAPI/resources",
-		"/C/xampp/htdocs/PikaCardAPI/resources/views",
-		"/C/xampp/htdocs/PikaCardAPI/resources/views/emails"
+		"/C/xampp/htdocs/PikaCardAPI/app/Http",
+		"/C/xampp/htdocs/PikaCardAPI/app/Models",
+		"/C/xampp/htdocs/PikaCardAPI/database",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations"
 	],
 	"file_history":
 	[
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateUserRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Models/MemberAwardsModel.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateMemberAwardRequest.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/routes.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/ActivityController.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_06_09_200250_member_awards_table.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/UserDataController.php",
-		"/C/xampp/htdocs/PikaCardAPI/resources/views/emails/reset_password.php",
-		"/C/xampp/htdocs/PikaCardAPI/resources/views/hi.blade.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateUserRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateActivityRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Models/ActivityModel.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/PasswordVerifier.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/league/oauth2-server/src/Grant/PasswordGrant.php",
+		"/C/xampp/htdocs/PikaCardAPI/AA_TODO/Tables to Create/flyer_cards.txt",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/league/oauth2-server/src/TokenType/Bearer.php",
+		"/C/xampp/htdocs/PikaCardAPI/storage/logs/laravel.log",
 		"/C/xampp/htdocs/PikaCardAPI/AA_TODO/TODO.txt",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Kernel.php",
+		"/C/xampp/htdocs/PikaCardAPI/config/oauth2.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/ResetPasswordRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/GetActivityRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Models/PartnerBranchModel.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_04_29_193159_partner_branch_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/UserDataSeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/league/oauth2-server/src/Exception/InvalidCredentialsException.php",
+		"/C/xampp/htdocs/PikaCardAPI/AA_TODO/Tables to Create/member_awd.txt",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/symfony/routing/Router.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/Auth/PasswordController.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_03_27_164800_partner_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Exceptions/Handler.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Models/PartnerModel.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Models/UserDataModel.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi/oauth2-server-laravel/src/Authorizer.php",
+		"/C/xampp/htdocs/PikaCardAPI/.gitignore",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/Auth/AuthController.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Console/Kernel.php",
+		"/C/xampp/htdocs/PikaCardAPI/server.php",
+		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/EnrollmentBonusController.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_03_28_171732_partner_activitity_classification_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_05_06_202231_activity_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/PartnerController.php",
+		"/C/xampp/htdocs/PikaCardAPI/AA_TODO/Tables to Create/activity.txt",
+		"/C/xampp/htdocs/PikaCardAPI/AA_TODO/Tables to Create/scoredf.txt",
+		"/C/xampp/htdocs/PikaCardAPI/AA_TODO/Tables to Create/flyer_cards",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/PartnerSeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Models/PartnerActivityClassificationModel.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/PartnerActivityClassificationSeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/CurrencySeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Models/CurrencyModel.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Models/CountryModel.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_01_154626_currency_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/UsersSeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/CountrySeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/seeds/LanguagesSeed.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_03_10_073541_languages_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Models/LanguagesModel.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_20_065413_country_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_28_000507_enrollment_bonus_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_04_21_162556_user_data_model_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/CountryController.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateEnrollmentBonusRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreatePartnerRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/LanguagesController.php",
+		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateLanguagesRequest.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_14_080210_create_users.php",
+		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_04_10_073541_languages_table.php",
+		"/C/xampp/htdocs/PikaCardAPI/resources/views/emails/reset_password.php",
+		"/C/xampp/htdocs/PikaCardAPI/config/mail.php",
+		"/C/xampp/htdocs/PikaCardAPI/resources/views/emails/welcome.php",
+		"/C/xampp/php/PEAR/Auth.php",
+		"/C/xampp/htdocs/PikaCardAPI/.env",
+		"/C/xampp/htdocs/PikaCardAPI/app/User.php",
+		"/C/xampp/htdocs/PikaCardAPI/resources/views/hi.blade.php",
 		"/C/xampp/htdocs/PikaCardAPI/config/app.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi/oauth2-server-laravel/src/Facades/Authorizer.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Models/UserDataModel.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/DeleteUserRequest.php",
-		"/C/xampp/htdocs/PikaCardAPI/storage/logs/laravel.log",
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/EnrollmentBonusController.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/PasswordVerifier.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/seeds/UsersSeed.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/symfony/routing/Route.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/seeds/UserDataSeed.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateVehicleRequest.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2014_04_24_110151_create_oauth_scopes_table.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_20_065413_country_table.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/seeds/DatabaseSeeder.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/league/flysystem/src/Exception.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MakerVehiclesController.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/AuthHandler.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/Auth/AuthController.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/User.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_04_21_162556_user_data_model_table.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_14_080210_create_users.php",
-		"/C/xampp/htdocs/PikaCardAPI/config/oauth2.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Models/CountryModel.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/seeds/VehiclesSeed.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/mockery/mockery/library/Mockery/Container.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/CountryController.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/league/oauth2-server/src/ResourceServer.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Exceptions/Handler.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateCountryRequest.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateEnrollmentBonusRequest.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Models/EnrollmentBonusModel.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_28_000507_enrollment_bonus_table.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/seeds/EnrollmentBonusSeed.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/composer/autoload_classmap.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MakerController.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_21_162556_user_data_model_table.php",
-		"/C/xampp/htdocs/PikaCardAPI/database/seeds/CountrySeed.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Requests/CreateMakerRequest.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/migrations/2016_02_26_065413_country_table.php",
@@ -159,17 +292,13 @@
 		"/C/xampp/htdocs/PikaCardAPI/app/app/Models/UserDataModel.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/league/oauth2-server/src/Exception/InvalidRequestException.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/league/oauth2-server/src/AuthorizationServer.php",
-		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi/oauth2-server-laravel/src/Authorizer.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Vehicle.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Maker.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/doctrine/instantiator/src/Doctrine/Instantiator/Instantiator.php",
-		"/C/xampp/htdocs/PikaCardAPI/vendor/league/oauth2-server/src/Grant/PasswordGrant.php",
 		"/C/xampp/htdocs/PikaCardAPI/database/seeds/OAuthClientSeed.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/lucadegasperi/oauth2-server-laravel/src/OAuth2ServerServiceProvider.php",
-		"/C/xampp/htdocs/PikaCardAPI/app/Http/Kernel.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/VehicleController.php",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Middleware/OnceAuth.php",
-		"/C/xampp/htdocs/PikaCardAPI/.env",
 		"/C/xampp/htdocs/PikaCardAPI/app/Http/Controllers/MyController.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Auth/Middleware/AuthenticateWithBasicAuth.php",
 		"/C/xampp/htdocs/PikaCardAPI/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php",
@@ -201,6 +330,69 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"activity",
+			"activity_seq_id",
+			"ActivityModel",
+			"CreateActivityRequest",
+			"password",
+			"expires_in",
+			"token_type",
+			"session",
+			"expires_in",
+			"verify",
+			"'emails.welcome",
+			"mail(",
+			"routeMiddleware",
+			"reset",
+			"There is not any data associated with this User ID",
+			"reset_password",
+			"getacti",
+			"ResetPasswordRequest",
+			"$request->phone_number",
+			"ResetPasswordRequest",
+			"reset_password",
+			"user credentials were inc",
+			"reset_password",
+			"reset",
+			"reset_pass",
+			"simplePaginate",
+			"Authorizer",
+			"reset_password",
+			"CreateActivityRequest",
+			"reset_password",
+			"partner",
+			"PartnerModel",
+			"partner",
+			"User",
+			"Country",
+			"create",
+			"CurrencyModel",
+			"];",
+			"Languages",
+			"XS",
+			"KS",
+			"'KS'",
+			"'language'",
+			"d.m.Y",
+			"enrollment_bonus",
+			"source_code",
+			"EnrollmentBonus",
+			"enrollment_bonuses",
+			"EnrollmentBonus",
+			"source_code",
+			"enrollment_bonus",
+			"enrollment_bonuses",
+			"EnrollmentBonus",
+			"PartnerSeed",
+			"UserDataSeed",
+			"$table->string(",
+			"UserDataSeed",
+			"send",
+			"user",
+			"once",
+			"sendmail",
+			"phone",
+			"phone_number",
 			"Authorizer",
 			"access_toke",
 			"miki",
@@ -265,12 +457,7 @@
 			"unserialize",
 			"//",
 			"=users",
-			"FormRequest",
-			"serie",
-			"find",
-			"serie",
-			"');\n",
-			" \n"
+			"FormRequest"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -278,6 +465,30 @@
 		"regex": false,
 		"replace_history":
 		[
+			"member_award",
+			"member_award_seq_id",
+			"MemberAwardsModel",
+			"CreateMemberAwardRequest",
+			"$phone_number",
+			"GetActivityRequest",
+			"activity",
+			"ActivityModel",
+			"activity",
+			"Acitivity",
+			"]);",
+			"Currency'",
+			"'languages'",
+			"d/m/Y",
+			"partner",
+			"code",
+			"partner",
+			"Partner",
+			"Languages",
+			"lang_id",
+			"languages",
+			"Languages",
+			"",
+			"PartnerSeed",
 			"Delete",
 			";",
 			"$",
@@ -302,8 +513,188 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "AA_TODO/TODO.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2019,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2019,
+								2019
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 678.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/Controllers/MemberAwardsController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5824,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2479,
+								2491
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 987.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "database/migrations/2016_05_06_202231_activity_table.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1896,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "database/migrations/2016_06_09_200250_member_awards_table.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1910,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1187,
+								1187
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 116.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "database/migrations/2016_02_20_065413_country_table.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1257,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "database/migrations/2016_02_28_000507_enrollment_bonus_table.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 914,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								595,
+								583
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -356,20 +747,168 @@
 		"selected_items":
 		[
 			[
-				"rou",
+				"route",
 				"app\\Http\\routes.php"
+			],
+			[
+				"memberaward",
+				"app\\Http\\Controllers\\MemberAwardsController.php"
+			],
+			[
+				"activityc",
+				"app\\Http\\Controllers\\ActivityController.php"
+			],
+			[
+				"activit",
+				"app\\Models\\ActivityModel.php"
+			],
+			[
+				"createuser",
+				"app\\Http\\Requests\\CreateUserRequest.php"
+			],
+			[
+				"userdata",
+				"app\\Http\\Controllers\\UserDataController.php"
+			],
+			[
+				"activity",
+				"app\\Models\\ActivityModel.php"
+			],
+			[
+				"password",
+				"app\\Http\\Controllers\\PasswordVerifier.php"
 			],
 			[
 				"lara",
 				"storage\\logs\\laravel.log"
 			],
 			[
-				"route",
-				"app\\Http\\routes.php"
+				"la",
+				"storage\\logs\\laravel.log"
+			],
+			[
+				"l",
+				"storage\\logs\\laravel.log"
+			],
+			[
+				"userda",
+				"app\\Http\\Controllers\\UserDataController.php"
+			],
+			[
+				"resetp",
+				"app\\Http\\Requests\\ResetPasswordRequest.php"
+			],
+			[
+				"lar",
+				"storage\\logs\\laravel.log"
 			],
 			[
 				"larave",
 				"storage\\logs\\laravel.log"
+			],
+			[
+				"userdatasee",
+				"database\\seeds\\UserDataSeed.php"
+			],
+			[
+				"partnerbra",
+				"app\\Models\\PartnerBranchModel.php"
+			],
+			[
+				"router",
+				"vendor\\symfony\\routing\\Router.php"
+			],
+			[
+				"createu",
+				"app\\Http\\Requests\\CreateUserRequest.php"
+			],
+			[
+				"handler",
+				"app\\Exceptions\\Handler.php"
+			],
+			[
+				"partner",
+				"app\\Models\\PartnerModel.php"
+			],
+			[
+				"userdatacontr",
+				"app\\Http\\Controllers\\UserDataController.php"
+			],
+			[
+				"activitycontr",
+				"app\\Http\\Controllers\\ActivityController.php"
+			],
+			[
+				"authoriz",
+				"vendor\\lucadegasperi\\oauth2-server-laravel\\src\\Authorizer.php"
+			],
+			[
+				"oauthcontroller",
+				"app\\Http\\Controllers\\Auth\\AuthController.php"
+			],
+			[
+				"kerne",
+				"app\\Console\\Kernel.php"
+			],
+			[
+				"provider",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php"
+			],
+			[
+				"server",
+				"server.php"
+			],
+			[
+				"kernel",
+				"app\\Http\\Kernel.php"
+			],
+			[
+				"activitymode",
+				"app\\Models\\ActivityModel.php"
+			],
+			[
+				"createacit",
+				"app\\Http\\Requests\\CreateActivityRequest.php"
+			],
+			[
+				"rou",
+				"app\\Http\\routes.php"
+			],
+			[
+				"activitymodel",
+				"app\\Models\\ActivityModel.php"
+			],
+			[
+				"rout",
+				"app\\Http\\routes.php"
+			],
+			[
+				"passwor",
+				"app\\Http\\Controllers\\PasswordVerifier.php"
+			],
+			[
+				"partnerac",
+				"app\\Models\\PartnerActivityClassificationModel.php"
+			],
+			[
+				"partnermo",
+				"app\\Models\\PartnerModel.php"
+			],
+			[
+				"laravel",
+				"storage\\logs\\laravel.log"
+			],
+			[
+				"userreq",
+				"app\\Http\\Requests\\CreateUserRequest.php"
+			],
+			[
+				"mail",
+				"config\\mail.php"
+			],
+			[
+				"passwordv",
+				"app\\Http\\Controllers\\PasswordVerifier.php"
 			],
 			[
 				"route.php",
@@ -386,18 +925,6 @@
 			[
 				"exce",
 				"vendor\\league\\flysystem\\src\\Exception.php"
-			],
-			[
-				"rout",
-				"app\\Http\\routes.php"
-			],
-			[
-				"userdata",
-				"database\\seeds\\UserDataSeed.php"
-			],
-			[
-				"oauthcontroller",
-				"app\\Http\\Controllers\\Auth\\AuthController.php"
 			],
 			[
 				"container",
@@ -480,7 +1007,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 519.0,
+	"side_bar_width": 392.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

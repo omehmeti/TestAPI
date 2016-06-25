@@ -24,9 +24,9 @@ class CreateEnrollmentBonusRequest extends Request
     public function rules()
     {
         return [
-            'source_code' => 'required',
+            'source_code' => 'required|max:20|unique:enrollment_bonus,source_code',
             'name' => 'required',
-            'start_date' => 'required',
+            'start_date' => 'required|max:50',
             'end_date' => 'required'
         ];
     }

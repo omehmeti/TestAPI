@@ -2,29 +2,18 @@
 create table SCOREDEF
 (
   id                             NUMBER not null,
-  airline_carrier                VARCHAR2(10 CHAR),
+  partner_code                   VARCHAR2(10 CHAR),
+  partner_activity_classification_code             VARCHAR2(20 CHAR),
   type                           VARCHAR2(5 CHAR) not null,
-  flight_class                   VARCHAR2(1 CHAR),
-  tour_code                      VARCHAR2(14 CHAR),
-  origin                         VARCHAR2(10 CHAR),
-  destination                    VARCHAR2(10 CHAR),
   start_date                     DATE,
   end_date                       DATE,
   dayofweek                      VARCHAR2(7 CHAR),
-  mile                           NUMBER,
+  points                         NUMBER,
   add_point                      NUMBER,
-  add_mile                       NUMBER,
   mul_point                      NUMBER,
-  mul_mile                       NUMBER,
   max_point                      NUMBER,
-  max_mile                       NUMBER,
   min_point                      NUMBER,
-  min_mile                       NUMBER,
-  class_grouped                  CHAR(1 CHAR),
-  class_group_code               VARCHAR2(10 CHAR),
-  fltno_grouped                  CHAR(1 CHAR),
-  fltno_group_code               VARCHAR2(10 CHAR),
-  status                         CHAR(1 CHAR),
+  status_active                  CHAR(1 CHAR),
   carrier_grouped                CHAR(1 CHAR),
   carrier_group_code             VARCHAR2(10 CHAR),
   bonus_explanation              VARCHAR2(255 CHAR),
@@ -45,40 +34,8 @@ create table SCOREDEF
   mul_tpm                        NUMBER,
   max_tpm                        NUMBER,
   min_tpm                        NUMBER,
-  inserted_by                    VARCHAR2(20 CHAR),
-  insert_date                    DATE,
-  amended_by                     VARCHAR2(20 CHAR),
-  amend_date                     DATE,
-  act_classification             VARCHAR2(20 CHAR),
   company_branch_seq             NUMBER,
-  unit_type                      VARCHAR2(10 CHAR),
-  suppress_if_zero_earn          VARCHAR2(1 CHAR),
-  is_tpm_used                    VARCHAR2(1 CHAR) default 'T',
-  promotion_code                 VARCHAR2(30 CHAR),
-  campaign_isn                   NUMBER,
-  from_distance                  NUMBER,
-  to_distance                    NUMBER,
-  flt_range_group_code_valid     VARCHAR2(10 CHAR),
-  flt_range_group_code_exclusive VARCHAR2(10 CHAR),
-  flown_class                    VARCHAR2(1 CHAR),
-  flown_class_grouped            CHAR(1 CHAR),
-  flown_class_group_code         VARCHAR2(10 CHAR),
-  route_grouped                  CHAR(1 CHAR),
-  origin_group_code              VARCHAR2(10 CHAR),
-  destination_group_code         VARCHAR2(10 CHAR),
-  custom_promotion               VARCHAR2(1 CHAR)
-)
-tablespace CRANE_PC_DATA
-  pctfree 10
-  initrans 1
-  maxtrans 255
-  storage
-  (
-    initial 5M
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+  
 -- Add comments to the table 
 comment on table SCOREDEF
   is 'BONUS RULES TABLE. IF A COLUMN IS BLANK, IT MEANS APPLY TO ALL RECORDS.';
@@ -201,76 +158,3 @@ comment on column SCOREDEF.origin_group_code
   is 'ORIGIN GROUP CODE';
 comment on column SCOREDEF.destination_group_code
   is 'DESTINATION GROUP CODE';
--- Create/Recreate indexes 
-create index IDX#MS_SEQ on SCOREDEF (MEMBER_SEGMENT_SEQ)
-  tablespace CRANE_PC_DATA
-  pctfree 10
-  initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
-create index IDX#47 on SCOREDEF (RULE_STATISTIC_CODE)
-  tablespace CRANE_PC_DATA
-  pctfree 10
-  initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
--- Create/Recreate primary, unique and foreign key constraints 
-alter table SCOREDEF
-  add constraint PK#SCOREDEF primary key (ID)
-  using index 
-  tablespace CRANE_PC_DATA
-  pctfree 10
-  initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
-alter table SCOREDEF
-  add constraint FK#SCOREDEF#CMPNY_ACT_CLSFTN foreign key (AIRLINE_CARRIER, ACT_CLASSIFICATION)
-  references COMPANY_ACT_CLASSIFICATIONS (COMPANY, CODE)
-  disable;
-alter table SCOREDEF
-  add constraint FK#SCOREDEF#GROUP_DEFS#CARRIER foreign key (CARRIER_GROUP_CODE)
-  references GROUP_DEFS (CODE);
-alter table SCOREDEF
-  add constraint FK#SCOREDEF#GROUP_DEFS#CLASS foreign key (CLASS_GROUP_CODE)
-  references GROUP_DEFS (CODE);
-alter table SCOREDEF
-  add constraint FK#SCOREDEF#GROUP_DEFS#FLTNO foreign key (FLTNO_GROUP_CODE)
-  references GROUP_DEFS (CODE);
-alter table SCOREDEF
-  add constraint FK#SCOREDEF#GROUP_DEFS#TIER foreign key (CARD_GROUP_CODE)
-  references GROUP_DEFS (CODE);
-alter table SCOREDEF
-  add constraint FK#SCOREDEF#SCOREDEF_TYPES foreign key (TYPE)
-  references SCOREDEF_TYPES (CODE);
-alter table SCOREDEF
-  add constraint FK#SCOREDEF#SCRDEF_UNTTYP foreign key (UNIT_TYPE)
-  references SCOREDEF_UNIT_TYPES (CODE);
-alter table SCOREDEF
-  add constraint FK#SD#BOOKING_OFFICE foreign key (BOOKING_OFFICE_ID)
-  references BOOKING_OFFICES (OFFICE_ID)
-  deferrable initially deferred;
-alter table SCOREDEF
-  add constraint FK#SD#CAMPAIGN_ISN foreign key (CAMPAIGN_ISN)
-  references CAMPAIGN_MANAGEMENT (CAMPAIGN_ISN);
--- Grant/Revoke object privileges 
-grant select on SCOREDEF to CRANE_PC_BO;
-grant select on SCOREDEF to CRANE_PC_RO;
-grant select on SCOREDEF to PAX_SELECT;

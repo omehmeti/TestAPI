@@ -13,9 +13,13 @@ class PasswordVerifier extends Controller
 {
     public function verify($input, $password)
     {
-
-    	$field = filter_var($input,FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-    	$credentials = 
+        $field ='';
+        if( filter_var($input, FILTER_VALIDATE_FLOAT) ){
+            $field = 'phone_number';
+        }else{
+    	   $field = filter_var($input,FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+    	}
+        $credentials = 
     	[
     		$field => $input,
     		'password' => $password,

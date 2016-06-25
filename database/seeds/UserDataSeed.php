@@ -25,7 +25,7 @@ class UserDataSeed extends Seeder
             'gender' => array_rand(['M','F','O']), 
             'start_date' =>  $faker->dateTimeThisCentury->format('d/m/Y'), 
             'status' => array_rand(['AC','CX','DL']), 
-            'communication_language' => array_rand(['ALB','TUR','ENG']), 
+            'communication_language' => 'en', 
             'nationality' => array_rand(['ALB','TUR','ENG']), 
             'address' => $faker->streetName .' '. $faker->streetAddress  ,
             'city' => $faker->city,

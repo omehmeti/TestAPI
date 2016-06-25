@@ -43,10 +43,12 @@ class UserDataModelTable extends Migration
             
             
             //Forign key contraints
-            $table->foreign('country_code')->references('code')->on('country');
-
+            $table->foreign('country_code')->references('country_code')->on('country');
             $table->foreign('enrollment_source_code')->references('source_code')->on('enrollment_bonus');
+            $table->foreign('communication_language')->references('code')->on('languages');
             
+
+
             $table->foreign('user_id')->references('id')->on('users');
             
         });
