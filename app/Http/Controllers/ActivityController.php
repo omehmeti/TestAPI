@@ -8,15 +8,28 @@ use App\Http\Requests;
 use App\Models\ActivityModel;
 use App\Http\Requests\CreateActivityRequest;
 use App\Http\Requests\GetActivityRequest;
+use App\Interfaces\BonusRules\BonusRule;
 use DB;
 
 class ActivityController extends Controller
 {
+
     public function __construct(){
 		$this->middleware('oauth');
 	}
 
-	public function index(){
+    public function index()
+    {   
+      
+        $bonusRule = new BonusRule();
+       
+        $boom = $bonusRule->matchBonusRule();
+
+        return $boom;
+    }
+
+
+	/*public function index(){
     	return response()->json(['message'=>'You can not perform this action','code'=>404],404);
     	/*$activity = Cache::remember('activity',864000,function(){
             return ActivityModel::all();
@@ -25,7 +38,7 @@ class ActivityController extends Controller
     	
         return response() -> json( ['data' => $activity],200);
         */
-    }
+    /*}*/
 
     public function store( CreateActivityRequest $request ){
     	$values = $request->all();

@@ -44,16 +44,15 @@ Route::group(array('prefix' => 'api/v1.0'), function () {
 	Route::resource('user_data','UserDataController',['except' => ['index'] ] );
 	
 
-	Route::resource('activity','ActivityController',['except' => ['index','show'] ]); 
+	Route::resource('activity','ActivityController',['except' => ['show'] ]); 
 	Route::get('activity/get_activity/{activity_seq_id?}{user_id?}{partner_code?}', 'ActivityController@get_activity',['only' => ['index','show'] ]);
 	
 	Route::get('member_awards/get_member_award/{member_award_seq_id?}{user_id?}{partner_code?}', 'MemberAwardsController@get_member_award',['only' => ['index','show'] ]);
 
 	Route::resource('member_awards','MemberAwardsController',['except' => ['index','show'] ]); 
-	
+	Route::resource('member_cards','MemberCardsController',['only' => ['show'] ]);
 
-
-	Route::resource('member_cards','MemberCardsController',['except' => ['store'] ]); 
+	Route::resource('transfer_points','TransferPointsController',['except' => ['index'] ]); 
 
 
 	Route::post('oauth/access_token',function(){

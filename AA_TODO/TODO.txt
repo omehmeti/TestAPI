@@ -87,8 +87,8 @@
 -----------------
 
 Badges Earned
-Total Points
-Total Points since enrollment
+Total Points (OK)
+Total Points since enrollment (OK)
 Last 3 Activities (OK)
 Last 3 Awards (OK)
 Promotions
